@@ -868,9 +868,8 @@
         document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     </script>
 
-    <!-- ========== SRCAA COPILOT (ADDED WITHOUT ANY OTHER CHANGES) ========== -->
+    <!-- ========== SRCAA COPILOT (ONLY SRCAA-RELATED ANSWERS) ========== -->
     <style>
-        /* copilot widget styles - independent, no impact on original design */
         .copilot-fab {
             position: fixed;
             bottom: 28px;
@@ -1010,7 +1009,7 @@
         <div class="copilot-messages" id="copilotMessages">
             <div class="message bot-msg">
                 <div class="avatar-bot"><i class="fas fa-robot"></i></div>
-                <div class="bubble">Hello! I'm the SRCAA virtual assistant 🤖. Ask me about our research, internships, team, publications, or contact details!</div>
+                <div class="bubble">Hello! I'm the SRCAA virtual assistant 🤖. I can answer only questions about Shakti Research Centre & Academia (SRCAA) — our research, internships, team, publications, contact, certifications, and DORA statement.</div>
             </div>
         </div>
         <div class="copilot-quick" id="quickReplies">
@@ -1020,14 +1019,13 @@
             <span class="quick-chip" data-ask="Research publications?">Publications</span>
         </div>
         <div class="copilot-input">
-            <input type="text" id="copilotQuery" placeholder="Ask something...">
+            <input type="text" id="copilotQuery" placeholder="Ask about SRCAA only...">
             <button id="sendCopilotMsg"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
     <script>
         (function() {
-            // copilot logic - fully independent, no conflict
             const fab = document.getElementById('copilotFab');
             const win = document.getElementById('copilotWindow');
             const closeBtn = document.getElementById('closeCopilotWindow');
@@ -1061,33 +1059,56 @@
                 });
             }
 
+            // Strict SRCAA-only response logic
             function getCopilotReply(userMsg) {
                 const lower = userMsg.toLowerCase();
+                // Check if query is related to SRCAA
+                const srcaaKeywords = ['src', 'shakti', 'srcaa', 'research centre', 'academia', 'internship', 'intern', 'publication', 'press', 'team', 'faculty', 'founder', 'sudhakaran', 'quality', 'certificate', 'itc', 'dora', 'assessment', 'contact', 'email', 'phone', 'whatsapp', 'mission', 'vision', 'abhijnana', 'prathiba'];
+                let isRelated = srcaaKeywords.some(keyword => lower.includes(keyword));
+                
+                // Also allow generic greetings and help requests but still focus on SRCAA
+                const greetings = ['hi', 'hello', 'hey', 'help', 'what can you do', 'about you'];
+                if (greetings.some(g => lower.includes(g))) {
+                    return "Hello! I'm here to answer only questions about Shakti Research Centre & Academia (SRCAA). You can ask me about our research, internships, team members, publications, contact details, quality certifications, DORA statement, or the founder.";
+                }
+                
+                if (!isRelated) {
+                    return "I'm sorry, I can only provide information about Shakti Research Centre & Academia (SRCAA). Please ask me something related to SRCAA — such as internships, research publications, team, contact, certifications, or our DORA compliance.";
+                }
+                
+                // SRCAA specific answers
                 if (lower.includes('src') && (lower.includes('what') || lower.includes('about') || lower.includes('tell me'))) {
-                    return "SRCAA (Shakti Research Centre & Academia) is a digital research institution established in 2024, accredited by ITC & GAOTE. It focuses on research excellence, global collaboration, and empowering students & educators.";
+                    return "SRCAA (Shakti Research Centre & Academia) is a digital research institution established in 2024 under Shakti Groups of Education, founded by Sudhakaran T. It is accredited by ITC and GAOTE, focusing on research excellence, global collaboration, and empowering students and educators.";
                 }
                 if (lower.includes('internship') || lower.includes('intern')) {
-                    return "🎓 Our SRCAA Internship Program offers hands‑on experience in research writing, data analysis, and publication support. You can apply using the 'Apply Now' button on the page (under Internship section).";
+                    return "🎓 The SRCAA Internship Program offers hands‑on experience in research writing, data analysis, and publication support. You can apply using the 'Apply Now' button in the Internship section on our website (Google Form link provided).";
                 }
                 if (lower.includes('contact') || lower.includes('email') || lower.includes('reach')) {
-                    return "📧 You can reach us at: srcaacontact@gmail.com. Also follow our WhatsApp community via the contact section on the website.";
+                    return "📧 You can contact SRCAA via email: srcaacontact@gmail.com. Also join our WhatsApp community using the link in the Contact section of the website.";
                 }
-                if (lower.includes('publication') || lower.includes('journal') || lower.includes('press')) {
-                    return "📄 SRCAA publishes 'Abhijnana Prathiba' – press releases, internship reports, and research papers are available in the Publications section. We also have books and research articles.";
+                if (lower.includes('publication') || lower.includes('journal') || lower.includes('press') || lower.includes('abhijnana')) {
+                    return "📄 SRCAA publishes 'Abhijnana Prathiba' – including press releases, internship reports, and books. You can find press releases, internship reports, and a book by Mrs. Varalakshmi G (ISBN 978-81-979976-4-8) in the Publications section.";
                 }
                 if (lower.includes('team') || lower.includes('faculty') || lower.includes('expert')) {
-                    return "👥 Our team includes experienced researchers: Dr. Narayana K.H, Dr. Lakshmi Bai D, Mr. Ambarish C Abbaiah, Dr. Pruthvi N, and many other distinguished faculty members across disciplines.";
+                    return "👥 SRCAA's expert team includes Mr. Ambarish C Abbaiah, Dr. Narayana K.H (Sanskrit dept. head, 28+ yrs), Dr. Lakshmi Bai D (State rank holder), Dr. Pruthvi N, Mr. Dileep R, Dr. Shashikala C.S, Dr. Rajini K.S, Dr. Anjana Radhakrishna, and others. All are experienced researchers and educators.";
                 }
-                if (lower.includes('founder')) {
-                    return "👨‍🏫 Founder: Sudhakaran T, a dedicated academic and researcher, committed to inclusive and high‑impact education. He is also an ITC Associate and founder of IJJSAR.";
+                if (lower.includes('founder') || lower.includes('sudhakaran')) {
+                    return "👨‍🏫 Founder: Sudhakaran T – a distinguished academic researcher with extensive teaching experience and published papers. He is also an ITC Associate and founder of IJJSAR. His vision is inclusive, collaborative education.";
                 }
                 if (lower.includes('quality') || lower.includes('certificate')) {
-                    return "🏅 SRCAA holds an International Quality Certificate (85% Grade B) accredited by ITC. You can verify it using the 'Verify Certificate' button on the page.";
+                    return "🏅 SRCAA holds an International Quality Certificate (85% Grade B) accredited by ITC. You can verify it using the 'Verify Certificate' button on our website.";
                 }
                 if (lower.includes('dora') || lower.includes('research assessment')) {
-                    return "📜 SRCAA follows the San Francisco Declaration on Research Assessment (DORA) since March 2026, promoting research quality, societal impact, and responsible metrics.";
+                    return "📜 SRCAA adheres to the San Francisco Declaration on Research Assessment (DORA) effective March 2026. We evaluate research based on quality, originality, societal impact – not just journal metrics.";
                 }
-                return "Thank you for your interest! I can help with information about SRCAA, internships, team members, publications, contact, and quality certifications. Feel free to rephrase your question.";
+                if (lower.includes('mission')) {
+                    return "🎯 Our mission: Foster an inclusive academic environment, uphold high integrity, promote global collaboration, and encourage lifelong learning.";
+                }
+                if (lower.includes('vision')) {
+                    return "🔭 Our vision: To become a global leader in research and education, connecting educators and students worldwide.";
+                }
+                // fallback for any other SRCAA-related query not explicitly matched
+                return "Thank you for your interest in SRCAA! For detailed information, please refer to the relevant sections on our website (About, Team, Publications, Internship, Contact). I can tell you more about research, internships, team, publications, certifications, and our DORA compliance. What would you like to know?";
             }
 
             function sendMessage() {
