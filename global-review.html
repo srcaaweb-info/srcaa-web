@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>SGRCR &mdash; SRCAA Global Review of Contemporary Research</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .policy-info-bar{display:flex;flex-wrap:wrap;gap:.75rem 2rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,.08);}
+    .policy-info-item{display:flex;align-items:center;gap:.5rem;font-size:.95rem;color:var(--brown-700,#5c4033);}
+    .policy-info-item i{color:var(--brown-500,#8a5a3c);}
+    .policy-subhead{font-size:1.05rem;font-weight:700;color:var(--brown-700,#5c4033);margin:1.75rem 0 .5rem;}
+    .policy-subhead:first-child{margin-top:0;}
+    .policy-ol{margin:.5rem 0 1.25rem 1.25rem;padding:0;}
+    .policy-ol li{margin-bottom:.6rem;line-height:1.65;}
+    .policy-ul{margin:.5rem 0 1.25rem 1.25rem;padding:0;list-style:disc;}
+    .policy-ul li{margin-bottom:.6rem;line-height:1.65;}
+    .policy-table{width:100%;border-collapse:collapse;margin:1rem 0 1.5rem;}
+    .policy-table th,.policy-table td{border:1px solid rgba(0,0,0,.12);padding:.65rem .9rem;text-align:left;font-size:.95rem;}
+    .policy-table th{background:var(--brown-500,#8a5a3c);color:#fff;}
+    .policy-table tr:nth-child(even) td{background:rgba(0,0,0,.03);}
+    .policy-note{font-style:italic;font-size:.9rem;color:#6b6b6b;margin-top:.5rem;}
+    .policy-source{font-size:.9rem;color:#6b6b6b;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,.08);}
+  </style>
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
+    <div class="cookie-text">We value your privacy. By continuing you agree to our <a href="#">Privacy</a> &amp; <a href="#">Terms</a>.</div>
+  </div>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">&#10005;</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">&#10003; Accept</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+      <span class="nav-logo-text">SRCAA</span>
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="index.html#founder"><i class="fas fa-user-tie"></i> Founder</a>
+      <a href="index.html#santosh"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
+      <a href="index.html#team"><i class="fas fa-users"></i> Team</a>
+      <a href="global-review.html" class="active"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
+      <a href="accreditations.html"><i class="fas fa-certificate"></i> Accreditations</a>
+      <a href="it-solutions.html" class="nav-it-highlight"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
+      <a href="online-courses.html"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
+      <a href="index.html#press"><i class="fas fa-book"></i> Publications</a>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#about" onclick="closeMobileMenu()"><i class="fas fa-info-circle"></i> About</a>
+    <a href="index.html#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder</a>
+    <a href="index.html#santosh" onclick="closeMobileMenu()"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
+    <a href="index.html#team" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Team</a>
+    <a href="global-review.html" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
+    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations</a>
+    <a href="it-solutions.html" class="nav-it-highlight" onclick="closeMobileMenu()"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
+    <a href="online-courses.html" onclick="closeMobileMenu()"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
+    <a href="index.html#press" onclick="closeMobileMenu()"><i class="fas fa-book"></i> Publications</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero brown-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-icon" style="background:linear-gradient(135deg, var(--brown-500), var(--brown-700));padding:12px"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" style="width:100%;height:100%;object-fit:contain;" /></div>
+    <div class="section-badge brown-badge"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" style="width:16px;height:16px;object-fit:contain;border-radius:50%" /> Peer-Reviewed Journal</div>
+    <h1 class="page-hero-title">SRCAA Global Review of Contemporary Research</h1>
+    <p class="page-hero-sub">An open-access, double-blind, multidisciplinary peer-reviewed journal publishing original research with DOI assignment and global indexing.</p>
+  </div>
+</section>
+
+<main class="main-content">
+
+  <!-- JOURNAL ABOUT -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-info-circle"></i> About the Journal</div>
+      <h2 class="section-title brown-title">SGRCR &mdash; A New Era of Research</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">The <strong>SRCAA Global Review of Contemporary Research (SGRCR)</strong> is a peer-reviewed, multidisciplinary academic journal published under the aegis of Shakti Research Centre and Academia (SRCAA), a digital academic and research institution established in 2024 and accredited under the International Trade Council (ITC) Conformity Assessment and Recognition Framework. The journal is committed to disseminating high-quality, original research across Commerce, Management, Economics, Social Sciences, and allied interdisciplinary fields.</p>
+
+      <p class="about-lead">The journal upholds the principles of the San Francisco Declaration on Research Assessment (DORA), the Committee on Publication Ethics (COPE) Code of Conduct, and the editorial and content-selection criteria applied by Scopus/Elsevier's Content Selection and Advisory Board (CSAB), with the long-term objective of qualifying for and sustaining indexation in Scopus and other internationally recognised abstracting and indexing databases.</p>
+
+      <p class="about-lead">This policy manual consolidates the eight core policies of the journal &mdash; Editorial Guidelines, Reviewer Guidelines, Plagiarism Guidelines, Author Guidelines, Withdrawal Policy, Legal Policy, and Academic &amp; Publication Policy &mdash; and is referenced in all submission and correspondence templates.</p>
+
+      <div class="policy-info-bar">
+        <div class="policy-info-item"><i class="fas fa-code-branch"></i> Policy Version 1.0</div>
+        <div class="policy-info-item"><i class="fas fa-calendar-alt"></i> Effective Date: To be notified upon journal launch</div>
+        <div class="policy-info-item"><i class="fas fa-barcode"></i> ISSN: Applied for</div>
+        <div class="policy-info-item"><i class="fas fa-barcode"></i> e-ISSN: Applied for</div>
+        <div class="policy-info-item"><i class="fas fa-fingerprint"></i> DOI Prefix: To be assigned (Crossref)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- JOURNAL METADATA -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-list"></i> Journal Metadata</div>
+      <h2 class="section-title brown-title">Key Features</h2>
+    </div>
+    <div class="journal-meta-grid">
+      <div class="journal-meta-item brown-meta reveal-scale"><i class="fas fa-unlock-alt"></i><h3>Open Access</h3><p>Freely accessible to readers worldwide &mdash; no subscription required.</p></div>
+      <div class="journal-meta-item brown-meta reveal-scale reveal-delay-1"><i class="fas fa-user-secret"></i><h3>Double-Blind</h3><p>Rigorous double-blind peer review ensuring impartial evaluation.</p></div>
+      <div class="journal-meta-item brown-meta reveal-scale reveal-delay-2"><i class="fas fa-layer-group"></i><h3>Multidisciplinary</h3><p>Spanning sciences, social sciences, humanities, and technology.</p></div>
+    </div>
+  </section>
+
+  <!-- RESEARCH AREAS -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-flask"></i> Research Areas</div>
+      <h2 class="section-title brown-title">Scopes &amp; Domains</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card brown-card reveal-scale"><h3 class="card-title"><i class="fas fa-chart-line"></i> Commerce &amp; Management</h3><p>Accounting, finance, marketing, organisational behaviour, and strategic management research.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-brain"></i> Social Sciences</h3><p>Sociology, psychology, public policy, education, and community development studies.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-microscope"></i> Science &amp; Technology</h3><p>Applied sciences, engineering, computing, data analytics, and emerging technologies.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-3"><h3 class="card-title"><i class="fas fa-book"></i> Humanities &amp; Arts</h3><p>Literature, linguistics, philosophy, history, cultural studies, and the performing arts.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-4"><h3 class="card-title"><i class="fas fa-balance-scale"></i> Law &amp; Governance</h3><p>Legal studies, public administration, human rights, and regulatory frameworks.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-5"><h3 class="card-title"><i class="fas fa-globe-asia"></i> Interdisciplinary Studies</h3><p>Convergence of disciplines addressing complex global and societal challenges.</p></div>
+    </div>
+  </section>
+
+  <!-- AUTHOR & SUBMISSION GUIDELINES -->
+  <section class="section reveal" id="author-guidelines">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-paper-plane"></i> Submission</div>
+      <h2 class="section-title brown-title">Author &amp; Submission Guidelines</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+
+      <h3 class="policy-subhead"><i class="fas fa-book-reader"></i> Scope of the Journal</h3>
+      <p class="about-lead">SGRCR welcomes original research articles, review articles, case studies, short communications, and conceptual papers in Commerce, Management, Economics, Finance, Marketing, Human Resources, and related interdisciplinary areas. Manuscripts must not have been published previously, nor be under consideration elsewhere.</p>
+
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-file-alt"></i> Manuscript Preparation</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Language: English (UK or US spelling, used consistently)</li>
+            <li><i class="fas fa-check"></i> Research articles: 4,000&ndash;8,000 words</li>
+            <li><i class="fas fa-check"></i> Review articles: up to 10,000 words</li>
+            <li><i class="fas fa-check"></i> Short communications: up to 2,500 words</li>
+            <li><i class="fas fa-check"></i> Format: MS Word (.docx), 12-pt Times New Roman, 1.5 line spacing, A4, 1-inch margins</li>
+            <li><i class="fas fa-check"></i> Citation style: APA 7th Edition throughout</li>
+            <li><i class="fas fa-check"></i> Tables/Figures numbered, captioned, referenced in text; images min. 300 dpi</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-list-ol"></i> Manuscript Structure</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Title Page</li>
+            <li><i class="fas fa-check"></i> Abstract (200&ndash;250 words) + 4&ndash;6 Keywords</li>
+            <li><i class="fas fa-check"></i> Introduction &amp; Literature Review</li>
+            <li><i class="fas fa-check"></i> Methodology</li>
+            <li><i class="fas fa-check"></i> Results / Discussion</li>
+            <li><i class="fas fa-check"></i> Conclusion &amp; Limitations</li>
+            <li><i class="fas fa-check"></i> References, Acknowledgements &amp; Declarations</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="policy-subhead"><i class="fas fa-id-card"></i> Title Page Requirements</h3>
+      <ul class="policy-ul">
+        <li>Full title of the manuscript (concise, specific, under 20 words).</li>
+        <li>Full names, affiliations, ORCID iDs, and email addresses of all authors.</li>
+        <li>Corresponding author clearly identified with complete contact details.</li>
+        <li>A statement of each author's individual contribution (CRediT taxonomy recommended).</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-clipboard-check"></i> Declarations Required at Submission</h3>
+      <ul class="policy-ul">
+        <li>Conflict of Interest statement.</li>
+        <li>Funding statement (or "This research received no external funding").</li>
+        <li>Ethical approval / Institutional Review Board statement, where human or animal subjects are involved.</li>
+        <li>Data availability statement.</li>
+        <li>Originality and exclusive-submission declaration.</li>
+      </ul>
+
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-upload"></i> Submission Process</h3>
+          <ol class="policy-ol">
+            <li>Manuscripts are submitted through the journal's online submission portal or via the designated editorial email, accompanied by a cover letter.</li>
+            <li>Authors receive an acknowledgement of receipt within 3 working days.</li>
+            <li>A manuscript ID is issued and used in all subsequent correspondence.</li>
+          </ol>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-clock"></i> Review Timeline</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Initial editorial screening: within 5 working days</li>
+            <li><i class="fas fa-check"></i> Double-blind peer review: typically 3&ndash;4 weeks</li>
+            <li><i class="fas fa-check"></i> Editorial decision communicated with reviewer comments</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 class="policy-subhead"><i class="fas fa-coins"></i> Publication Charges</h3>
+      <p class="about-lead">Any article processing charge (APC), if applicable, is disclosed transparently on the journal's website prior to submission, along with waiver provisions for researchers from low-resource institutions. The journal does not levy hidden charges at any stage of review or publication.</p>
+
+      <p class="policy-note">All manuscripts, declarations, and submission correspondence are forwarded to <strong>admin@srcaa.co.in</strong> for editorial processing.</p>
+      <a href="mailto:admin@srcaa.co.in?subject=SGRCR%20Manuscript%20Submission" class="btn btn-primary" style="margin-top:1rem;display:inline-flex"><i class="fas fa-paper-plane"></i> Submit Manuscript</a>
+    </div>
+  </section>
+
+  <!-- EDITORIAL BOARD -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-users"></i> Editorial Board</div>
+      <h2 class="section-title brown-title">Our Editors</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card brown-card reveal-scale"><h3 class="card-title"><i class="fas fa-user-tie"></i> Sudhakaran T</h3><div class="card-sub">Founder &amp; Chairperson &mdash; SRCAA Global Review of Contemporary Research</div><p>Associate Researcher, Shakti Research Centre and Academia (SRCAA). In-charge of Seshadripuram Research Foundation and Seshadripuram Journal of Social Sciences activities.<br>Yelahanka, Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishnan</h3><div class="card-sub">Editor-in-Chief &mdash; SRCAA Global Review of Contemporary Research</div><p>M.Com, MBA, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Associate Professor, Department of Commerce and Management, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Sowmya D N</h3><div class="card-sub">Editorial Member</div><p>Director, Post Graduate Department of Commerce, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-3"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Santosh Nelamakanahalli Chikkamari</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, Ph.D. Professor, University of Sydney. Sessional Lecturer, Charles Sturt University, New South Wales, Australia.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-4"><h3 class="card-title"><i class="fas fa-laptop-code"></i> Abhi C</h3><div class="card-sub">Head of IT</div><p>SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-5"><h3 class="card-title"><i class="fas fa-balance-scale"></i> Bindu C</h3><div class="card-sub">Legal Advisor</div><p>B.Com, LLB. SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Shashikala C S</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, PGDBA, B.Ed, Ph.D in Commerce. Assistant Professor, Department of Commerce and Management, SSMRV College.<br>Bangalore.</p></div>
+
+      <div class="card brown-card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Pruthvi N</h3><div class="card-sub">Editor-in-Chief</div><p>MBA, M.Com, PGDM, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Head of Department &amp; Associate Professor, Department of Commerce and Management, Surana Evening College.<br>Bangalore.</p></div>
+    </div>
+  </section>
+
+  <!-- EDITORIAL GUIDELINES -->
+  <section class="section reveal" id="editorial-guidelines">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-sitemap"></i> Policy 1</div>
+      <h2 class="section-title brown-title">Editorial Guidelines</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">These guidelines govern the composition, responsibilities, and decision-making processes of the Editorial Board of SGRCR, ensuring consistency, transparency, and academic rigour in every stage of publication, from submission to final publication.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-users-cog"></i> Editorial Board Structure</h3>
+      <ul class="policy-ul">
+        <li><strong>Editor-in-Chief:</strong> overall responsibility for editorial policy, integrity, and final publication decisions.</li>
+        <li><strong>Associate Editors / Section Editors:</strong> subject-area screening, reviewer assignment, and recommendation to the Editor-in-Chief.</li>
+        <li><strong>International Editorial Advisory Board:</strong> a minimum of five members drawn from at least three countries, reflecting geographic and institutional diversity, in line with Scopus board-diversity expectations.</li>
+        <li><strong>Editorial Assistant / Managing Editor:</strong> manuscript tracking, correspondence, formatting compliance, and archival record-keeping.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-tasks"></i> Editorial Responsibilities</h3>
+      <ol class="policy-ol">
+        <li>Evaluate all submissions solely on academic merit &mdash; originality, rigour, clarity, and contribution to the field &mdash; irrespective of the authors' race, gender, religion, nationality, institutional affiliation, or political belief.</li>
+        <li>Maintain the confidentiality of submitted manuscripts and reviewer identities throughout the review process (double-blind, unless otherwise stated).</li>
+        <li>Ensure a documented, auditable trail for every editorial decision (accept, minor revision, major revision, reject).</li>
+        <li>Disclose and manage any conflict of interest; an editor with a personal, financial, or institutional connection to a submission must recuse themselves and delegate the decision to another qualified editor.</li>
+        <li>Safeguard against editorial or reviewer bias, and act promptly on allegations of misconduct, plagiarism, or data fabrication.</li>
+        <li>Issue corrections, clarifications, retractions, or expressions of concern where warranted, following COPE flowcharts.</li>
+      </ol>
+
+      <h3 class="policy-subhead"><i class="fas fa-route"></i> Editorial Workflow</h3>
+      <ul class="policy-ul">
+        <li>Submission &rarr; Initial editorial screening (scope, formatting, plagiarism check) &mdash; within 5 working days.</li>
+        <li>Desk rejection (if out of scope, poor quality, or ethical concerns) or assignment to peer review.</li>
+        <li>Double-blind peer review by a minimum of two independent reviewers &mdash; typically 3&ndash;4 weeks.</li>
+        <li>Editorial decision communicated to the corresponding author with reviewer comments.</li>
+        <li>Revision, re-review (if required), copy-editing, typesetting, and DOI assignment prior to publication.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-unlock"></i> Editorial Independence</h3>
+      <p class="about-lead">Editorial decisions are made independently of SRCAA's administrative or financial interests. No individual, sponsor, advertiser, or institution may influence editorial decisions on individual manuscripts.</p>
+    </div>
+  </section>
+
+  <!-- REVIEWER GUIDELINES -->
+  <section class="section reveal" id="reviewer-guidelines">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-user-check"></i> Policy 2</div>
+      <h2 class="section-title brown-title">Reviewer Guidelines</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">Peer review is the cornerstone of the journal's quality assurance process. It provides an independent, expert assessment of a manuscript's originality, methodological soundness, and contribution to knowledge, and offers constructive feedback to authors.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-user-friends"></i> Reviewer Selection</h3>
+      <ul class="policy-ul">
+        <li>Reviewers are selected on the basis of subject-matter expertise, publication record, and absence of conflict of interest with the authors or funding source.</li>
+        <li>A minimum of two independent reviewers is assigned to every manuscript; a third reviewer is invited in the event of conflicting recommendations.</li>
+        <li>The review model is double-blind: author identities are withheld from reviewers and vice versa.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-clipboard-list"></i> Reviewer Responsibilities</h3>
+      <ol class="policy-ol">
+        <li>Accept or decline a review invitation within 3 working days of receipt, declining if a conflict of interest or insufficient expertise exists.</li>
+        <li>Complete the review within the agreed timeframe (ordinarily 21 days) and request an extension in advance if required.</li>
+        <li>Evaluate the manuscript objectively on originality, methodology, data integrity, clarity, ethical compliance, and relevance to the journal's scope.</li>
+        <li>Provide specific, constructive, and evidence-based comments to both the editor and the authors; avoid personal or derogatory remarks.</li>
+        <li>Maintain strict confidentiality &mdash; manuscripts under review must not be shared, discussed, or used for personal advantage.</li>
+        <li>Alert the editor immediately to any suspected plagiarism, duplicate publication, data fabrication, or undisclosed conflict of interest.</li>
+        <li>Disclose any competing interest &mdash; financial, personal, or institutional &mdash; before or during the review.</li>
+      </ol>
+
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-check-double"></i> Recommendation Categories</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Accept as submitted</li>
+            <li><i class="fas fa-check"></i> Minor revisions required</li>
+            <li><i class="fas fa-check"></i> Major revisions required</li>
+            <li><i class="fas fa-check"></i> Reject</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-award"></i> Reviewer Recognition</h3>
+          <p class="about-lead" style="margin:0">SRCAA acknowledges reviewer contributions through annual reviewer certificates and, where the reviewer consents, public listing on the journal's website. Reviewer identities are never disclosed to authors without explicit reviewer consent (open review by mutual agreement only).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLAGIARISM GUIDELINES -->
+  <section class="section reveal" id="plagiarism-guidelines">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-shield-alt"></i> Policy 3</div>
+      <h2 class="section-title brown-title">Plagiarism Guidelines</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">SGRCR maintains zero tolerance for plagiarism, self-plagiarism, data fabrication, and falsification. All submissions are systematically screened for textual similarity prior to peer review.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-copy"></i> Definition and Categories</h3>
+      <ul class="policy-ul">
+        <li><strong>Direct plagiarism:</strong> verbatim reproduction of another's work without attribution.</li>
+        <li><strong>Paraphrasing plagiarism:</strong> closely mirroring another author's structure or wording without citation.</li>
+        <li><strong>Self-plagiarism / duplicate submission:</strong> reuse of one's own previously published material without disclosure and proper citation, or simultaneous submission to another journal.</li>
+        <li><strong>Mosaic plagiarism:</strong> piecing together phrases from multiple sources without adequate citation.</li>
+        <li><strong>Citation plagiarism:</strong> misattributing ideas or omitting sources for borrowed concepts, data, or figures.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-search"></i> Similarity Screening Procedure</h3>
+      <ol class="policy-ol">
+        <li>Every manuscript is screened using recognised plagiarism-detection software (e.g., Turnitin / iThenticate or equivalent) at the point of initial submission.</li>
+        <li>Acceptable overall similarity index (excluding references, properly cited quotations, and standard methodological phrasing) is applied according to the corresponding author's category, as set out below; any single source contributing more than 3% is flagged for editorial review regardless of category.</li>
+        <li>Manuscripts exceeding the acceptable threshold are returned to the author for revision or are rejected, at the Editor-in-Chief's discretion, depending on severity and intent.</li>
+        <li>A similarity report is retained in the manuscript's permanent record.</li>
+      </ol>
+
+      <table class="policy-table">
+        <thead><tr><th>Submitter Category</th><th>Maximum Acceptable Similarity Index</th></tr></thead>
+        <tbody>
+          <tr><td>Students (UG / PG / Ph.D. scholars)</td><td>Below 15%</td></tr>
+          <tr><td>Faculty, Researchers, and Academicians</td><td>Below 10%</td></tr>
+          <tr><td>AI-generated content (all categories)</td><td>Below 20%</td></tr>
+        </tbody>
+      </table>
+
+      <h3 class="policy-subhead"><i class="fas fa-robot"></i> AI-Content Detection</h3>
+      <p class="about-lead">In addition to textual-similarity screening, every manuscript is screened using recognised AI-content detection software to identify text generated or substantially rewritten by generative AI tools. An AI-generated content score of below 20% is required for all submitters, regardless of category (student, faculty, researcher, or academician). Manuscripts at or above this threshold are returned to the author for disclosure and substantial rewriting in the author's own words, or rejected at the Editor-in-Chief's discretion. Authors must, in all cases, disclose any use of generative AI tools in the preparation of the manuscript in the Declarations section, consistent with COPE guidance on authorship and AI tools.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-gavel"></i> Consequences of Confirmed Plagiarism and AI-Policy Breach</h3>
+      <ul class="policy-ul">
+        <li>Immediate rejection of the manuscript at any stage of review or production.</li>
+        <li>Retraction of the article if plagiarism is discovered after publication, with a formal retraction notice published and linked to the original article.</li>
+        <li>Notification to the author's home institution and, where applicable, to funding bodies.</li>
+        <li>A minimum three-year submission ban for the corresponding and/or offending author(s).</li>
+        <li>Cases are handled in accordance with COPE's plagiarism flowcharts.</li>
+        <li>The same escalation process applies where AI-generated content is found to be at or above the 20% threshold without disclosure, or where AI tools have been used to fabricate data, citations, or results.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WITHDRAWAL POLICY -->
+  <section class="section reveal" id="withdrawal-policy">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-undo"></i> Policy 5</div>
+      <h2 class="section-title brown-title">Withdrawal Policy</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <h3 class="policy-subhead"><i class="fas fa-file-signature"></i> Author-Initiated Withdrawal</h3>
+      <ol class="policy-ol">
+        <li>A withdrawal request must be submitted in writing (email) by the corresponding author, countersigned or corroborated by all co-authors, stating the reason for withdrawal.</li>
+        <li>Requests made before the assignment of reviewers are ordinarily processed without penalty within 5 working days.</li>
+        <li>Requests made during or after peer review, but prior to publication, may be granted at editorial discretion; the journal reserves the right to levy a nominal processing fee to recover reviewing and administrative costs already incurred.</li>
+        <li>Once a manuscript has been formally accepted, typeset, assigned a DOI, or published (online or in print), it cannot be "withdrawn" &mdash; any subsequent removal is handled exclusively under the Post-Publication Retraction procedure, not as a withdrawal.</li>
+      </ol>
+
+      <h3 class="policy-subhead"><i class="fas fa-exclamation-triangle"></i> Unauthorised or Repeated Withdrawal</h3>
+      <p class="about-lead">Withdrawal after acceptance without valid justification, or a pattern of repeated withdrawals by the same author(s), is treated as a breach of academic integrity and may result in a formal notice to the author's institution and a temporary submission ban of up to two years.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-history"></i> Post-Publication Retraction</h3>
+      <ul class="policy-ul">
+        <li>Retraction is reserved for confirmed cases of plagiarism, data fabrication/falsification, duplicate publication, unethical research, or major errors that invalidate the article's findings.</li>
+        <li>Retractions follow COPE's Retraction Guidelines: a retraction notice is published, linked bidirectionally to the original article, and the original article is watermarked "RETRACTED" but remains permanently accessible in the archive.</li>
+        <li>Corrections/Erratum notices are issued for minor errors that do not affect the overall validity of the findings.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-file-alt"></i> Withdrawal Request Format</h3>
+      <p class="about-lead" style="margin:0">Withdrawal requests should include the manuscript ID, article title, names of all authors, the specific reason for withdrawal, and signatures/consent (email confirmation acceptable) of all listed authors.</p>
+    </div>
+  </section>
+
+  <!-- LEGAL POLICY -->
+  <section class="section reveal" id="legal-policy">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-balance-scale"></i> Policy 6</div>
+      <h2 class="section-title brown-title">Legal Policy</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <h3 class="policy-subhead"><i class="fas fa-copyright"></i> Copyright and Licensing</h3>
+      <p class="about-lead">Authors retain copyright of their published work. Upon acceptance, authors grant SGRCR/SRCAA a non-exclusive licence to publish, distribute, and archive the article. Unless otherwise specified, articles are published under the Creative Commons Attribution 4.0 International (CC BY 4.0) licence, permitting reuse with appropriate credit to the original source.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-stamp"></i> Author Warranties</h3>
+      <ul class="policy-ul">
+        <li>The submitted work is the author's original creation and does not infringe any third-party copyright, patent, trademark, or other proprietary right.</li>
+        <li>All necessary permissions for reproduced material (images, tables, extended quotations) have been obtained and are disclosed at submission.</li>
+        <li>The manuscript contains no defamatory, unlawful, or fraudulent statement.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-exclamation-circle"></i> Disclaimer of Liability</h3>
+      <p class="about-lead">The views, opinions, findings, and conclusions expressed in published articles are those of the respective authors and do not necessarily reflect the views of the Editorial Board, SRCAA, or its affiliates. SRCAA, its editors, and reviewers accept no liability for any loss, damage, or claim arising from the use of information published in the journal, to the fullest extent permitted by applicable law.</p>
+
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-map-marker-alt"></i> Governing Law &amp; Jurisdiction</h3>
+          <p class="about-lead" style="margin:0">This policy manual and all matters relating to submission, publication, and use of SGRCR are governed by the laws of India. Any dispute shall be subject to the exclusive jurisdiction of the competent courts at Bengaluru, Karnataka, India.</p>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-user-shield"></i> Data Protection &amp; Privacy</h3>
+          <p class="about-lead" style="margin:0">Personal data collected during submission and review (names, affiliations, contact details) is used solely for editorial and publication purposes and is not shared with third parties beyond what is necessary for indexing, DOI registration, and archiving.</p>
+        </div>
+      </div>
+
+      <h3 class="policy-subhead"><i class="fas fa-external-link-alt"></i> Third-Party Content and External Links</h3>
+      <p class="about-lead" style="margin:0">SRCAA is not responsible for the content, accuracy, or availability of third-party websites, repositories, or data sources referenced or linked within published articles.</p>
+    </div>
+  </section>
+
+  <!-- ACADEMIC & PUBLICATION POLICY -->
+  <section class="section reveal" id="academic-publication-policy">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-graduation-cap"></i> Policy 7</div>
+      <h2 class="section-title brown-title">Academic &amp; Publication Policy</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">SGRCR's academic and publication practices are designed in accordance with the core criteria applied by Scopus/Elsevier's Content Selection and Advisory Board for journal evaluation, and with the standards of COPE, ICMJE, and DORA.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-list-check"></i> Key Indexing-Readiness Criteria</h3>
+      <ul class="policy-ul">
+        <li>Peer-review process: rigorous double-blind review with a minimum of two reviewers per manuscript.</li>
+        <li>Regularity and timeliness of publication: a fixed, published, and consistently maintained publication schedule (e.g., quarterly/bi-annual issues).</li>
+        <li>Online content availability: full-text availability in English (or with English abstracts/references), a functional and stable journal website, and article-level metadata in English.</li>
+        <li>Diversity of editorial board and authorship: editors and authors drawn from a range of institutions and, over time, countries.</li>
+        <li>Clarity of aims and scope: a clearly defined, consistently applied scope statement.</li>
+        <li>Quality and completeness of references: consistently formatted, complete, and verifiable reference lists (APA 7th edition).</li>
+        <li>Publication ethics statements: publicly available policies on authorship, conflict of interest, plagiarism, and misconduct.</li>
+        <li>Persistent identifiers: DOI assignment for every published article via a recognised registration agency (e.g., Crossref), and ISSN/e-ISSN registration.</li>
+      </ul>
+
+      <h3 class="policy-subhead"><i class="fas fa-user-edit"></i> Authorship Criteria</h3>
+      <p class="about-lead">Authorship is based on the ICMJE criteria: (i) substantial contribution to the conception, design, data acquisition, or analysis/interpretation of the work; (ii) drafting or critically revising the manuscript for important intellectual content; (iii) final approval of the version to be published; and (iv) agreement to be accountable for all aspects of the work. All those who meet these criteria are listed as authors; all who contributed but do not meet them are acknowledged separately. Ghost authorship and gift/guest authorship are prohibited.</p>
+
+      <h3 class="policy-subhead"><i class="fas fa-vial"></i> Research and Publication Ethics</h3>
+      <ul class="policy-ul">
+        <li>Studies involving human participants or animals must have appropriate institutional ethics approval, stated in the manuscript.</li>
+        <li>Informed consent must be obtained and documented for studies involving identifiable human subjects.</li>
+        <li>Data fabrication, falsification, image manipulation, and selective/misleading reporting of results are strictly prohibited.</li>
+        <li>Authors must disclose all sources of funding and any financial or non-financial conflicts of interest.</li>
+        <li>Redundant or duplicate publication of substantially the same data or findings in more than one journal is not permitted.</li>
+      </ul>
+
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-edit"></i> Correction, Retraction &amp; Concern</h3>
+          <p class="about-lead" style="margin:0">The journal follows COPE's flowcharts to determine whether a Correction, Retraction, or Expression of Concern is the appropriate response to an identified issue, ensuring the scholarly record remains accurate, transparent, and permanently accessible.</p>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-archive"></i> Archiving &amp; Continuity</h3>
+          <p class="about-lead" style="margin:0">All published content is preserved through institutional and/or third-party digital archiving arrangements to ensure continued access in the event of cessation of publication.</p>
+        </div>
+      </div>
+
+      <h3 class="policy-subhead"><i class="fas fa-sync-alt"></i> Policy Review</h3>
+      <p class="about-lead" style="margin:0">This policy manual is reviewed by the Editorial Board at least once every two years, or earlier where required by changes in international publication-ethics standards or indexing-body requirements. The current version and effective date are stated at the top of this page.</p>
+
+      <p class="policy-source">Issued by the Editorial Board, SRCAA Global Review of Contemporary Research, under the authority of Shakti Research Centre and Academia (SRCAA), Bengaluru, India.</p>
+    </div>
+  </section>
+
+  <!-- CURRENT ISSUE -->
+  <section class="section reveal" id="current-issue">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-newspaper"></i> Current Issue</div>
+      <h2 class="section-title brown-title">Volume 1, Issue 1</h2>
+    </div>
+    <div class="coming-soon-section" style="padding:0;min-height:auto;">
+      <div class="coming-soon-card reveal-scale">
+        <div class="coming-soon-badge"><i class="fas fa-clock"></i> Coming Soon</div>
+        <div class="coming-soon-icon"><i class="fas fa-book-open"></i></div>
+        <h3 class="coming-soon-title">The Inaugural Issue is on its Way</h3>
+        <p class="coming-soon-desc">SGRCR's first issue is currently being finalised. Once published, the table of contents, article DOIs, and full-text links for the current issue will appear here.</p>
+        <div class="coming-soon-features">
+          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Peer-reviewed articles with DOI</div>
+          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Open-access full text</div>
+          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Author &amp; abstract listings</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+        <span class="footer-brand-text">SRCAA</span>
+      </div>
+      <p class="footer-desc">Shakti Research Centre &amp; Academia. Est. 2024</p>
+    </div>
+    <div>
+      <h3 class="footer-col-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="index.html#founder"><i class="fas fa-chevron-right"></i> Founder</a></li>
+        <li><a href="index.html#santosh"><i class="fas fa-chevron-right"></i> Associate Researcher</a></li>
+        <li><a href="index.html#team"><i class="fas fa-chevron-right"></i> Team</a></li>
+        <li><a href="index.html#press"><i class="fas fa-chevron-right"></i> Publications</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-col-title">Initiatives</h3>
+      <ul class="footer-links">
+        <li><a href="global-review.html"><i class="fas fa-chevron-right"></i> SGRCR <span class="nav-badge-new">New</span></a></li>
+        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations</a></li>
+        <li><a href="it-solutions.html"><i class="fas fa-chevron-right"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a></li>
+        <li><a href="online-courses.html"><i class="fas fa-chevron-right"></i> Online Courses <span class="nav-badge">Soon</span></a></li>
+      </ul>
+      <h3 class="footer-col-title" style="margin-top:1.5rem">Contact</h3>
+      <div class="footer-contact-row"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 SRCAA &mdash; Shakti Research Centre and Academia. All rights reserved.</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  function toggleMenu() { document.getElementById('navMobile').classList.toggle('active'); }
+  function closeMobileMenu() { document.getElementById('navMobile').classList.remove('active'); }
+  document.querySelectorAll('.nav-links a').forEach(function(a) { a.addEventListener('click', closeMobileMenu); });
+
+  function setCookie(n,v,d){ var e=new Date(); e.setTime(e.getTime()+d*864e5); document.cookie=n+"="+v+";expires="+e.toUTCString()+";path=/"; }
+  function getCookie(n){ var v="; "+document.cookie, p=v.split("; "+n+"="); return p.length===2?p.pop().split(";").shift():null; }
+  function acceptCookies(){ setCookie('cookieConsent','accepted',365); document.getElementById('cookie-banner').classList.remove('show'); }
+  function declineCookies(){ setCookie('cookieConsent','declined',7); document.getElementById('cookie-banner').classList.remove('show'); }
+  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 1000); });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  document.querySelectorAll('img[data-fallback]').forEach(function(img) {
+    img.addEventListener('error', function() {
+      if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+        img.src = img.dataset.fallback;
+      }
+    });
+  });
+</script>
+</body>
+</html>

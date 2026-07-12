@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>IT Solutions for Academic Institutions &mdash; SRCAA</title>
+  <link rel="icon" type="image/svg+xml" href="logo.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- COOKIE BANNER -->
+<div id="cookie-banner">
+  <div class="cookie-content">
+    <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
+    <div class="cookie-text">We value your privacy. By continuing you agree to our <a href="#">Privacy</a> &amp; <a href="#">Terms</a>.</div>
+  </div>
+  <div class="cookie-buttons">
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">&#10005;</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">&#10003; Accept</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+      <span class="nav-logo-text">SRCAA</span>
+    </a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="index.html#founder"><i class="fas fa-user-tie"></i> Founder</a>
+      <a href="index.html#santosh"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
+      <a href="index.html#team"><i class="fas fa-users"></i> Team</a>
+      <a href="global-review.html"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
+      <a href="accreditations.html"><i class="fas fa-certificate"></i> Accreditations</a>
+      <a href="it-solutions.html" class="nav-it-highlight active"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
+      <a href="online-courses.html"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
+      <a href="index.html#press"><i class="fas fa-book"></i> Publications</a>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html#about" onclick="closeMobileMenu()"><i class="fas fa-info-circle"></i> About</a>
+    <a href="index.html#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder</a>
+    <a href="index.html#santosh" onclick="closeMobileMenu()"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
+    <a href="index.html#team" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Team</a>
+    <a href="global-review.html" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
+    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations</a>
+    <a href="it-solutions.html" class="nav-it-highlight" onclick="closeMobileMenu()"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
+    <a href="online-courses.html" onclick="closeMobileMenu()"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
+    <a href="index.html#press" onclick="closeMobileMenu()"><i class="fas fa-book"></i> Publications</a>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero blue-hero">
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-icon" style="background:linear-gradient(135deg, var(--blue-600), var(--blue-700))"><i class="fas fa-laptop-code"></i></div>
+    <div class="section-badge"><i class="fas fa-code"></i> Technology Services</div>
+    <h1 class="page-hero-title">IT Solutions for Academic Institutions</h1>
+    <p class="page-hero-sub">Comprehensive digital infrastructure, research platforms, and academic technology services designed for universities, colleges, and research centres.</p>
+  </div>
+</section>
+
+<main class="main-content">
+
+  <!-- COMING SOON BANNER -->
+  <div class="coming-soon-banner reveal-scale">
+    <i class="fas fa-tools coming-soon-banner-icon"></i>
+    <div class="coming-soon-banner-text">
+      <span class="coming-soon-badge"><i class="fas fa-hourglass-half"></i> Coming Soon</span>
+      <h2>IT Solutions Launching Soon</h2>
+      <p>Our IT solutions division is currently in development. We are building a comprehensive suite of academic technology services for institutions worldwide. Stay tuned for the official launch.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge"><i class="fas fa-info-circle"></i> Overview</div>
+      <h2 class="section-title">About IT Solutions</h2>
+    </div>
+    <div class="about-box blue-border reveal-scale">
+      <p class="about-lead">SRCAA&rsquo;s IT Solutions division is being developed to empower academic institutions with modern, scalable, and secure technology. From digital research platforms and publication management systems to data analytics, learning management, and institutional web infrastructure, we aim to deliver end-to-end technology services tailored to the needs of educators, researchers, and students.</p>
+      <p class="about-lead">Our solutions will combine open standards, cloud-native architecture, and academic best practices to help institutions streamline operations, enhance research output, and expand global collaboration &mdash; all backed by SRCAA&rsquo;s commitment to quality and ethical technology use.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge"><i class="fas fa-concierge-bell"></i> Services</div>
+      <h2 class="section-title">Our Service Offerings</h2>
+    </div>
+    <div class="it-grid">
+      <div class="it-card reveal-scale"><i class="fas fa-cloud"></i><h3>Cloud Infrastructure</h3><p>Scalable, secure cloud hosting for academic websites, repositories, and research platforms.</p></div>
+      <div class="it-card reveal-scale reveal-delay-1"><i class="fas fa-database"></i><h3>Research Data Management</h3><p>Centralised platforms for storing, organising, and sharing research datasets with DOI integration.</p></div>
+      <div class="it-card reveal-scale reveal-delay-2"><i class="fas fa-file-alt"></i><h3>Publication Management</h3><p>End-to-end journal and publication management systems with peer-review workflows.</p></div>
+      <div class="it-card reveal-scale reveal-delay-3"><i class="fas fa-chart-bar"></i><h3>Data Analytics</h3><p>Research analytics dashboards for citations, impact metrics, and institutional performance.</p></div>
+      <div class="it-card reveal-scale reveal-delay-4"><i class="fas fa-chalkboard-teacher"></i><h3>Learning Management</h3><p>LMS implementation and integration for online courses, assessments, and student tracking.</p></div>
+      <div class="it-card reveal-scale reveal-delay-5"><i class="fas fa-shield-alt"></i><h3>Cybersecurity</h3><p>Security audits, compliance, and protection for academic data and digital assets.</p></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="section reveal">
+    <div class="section-header">
+      <div class="section-badge"><i class="fas fa-project-diagram"></i> Process</div>
+      <h2 class="section-title">How We Work</h2>
+    </div>
+    <div class="cards-grid">
+      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-search"></i> Consultation</h3><p>We assess institutional needs, existing systems, and academic goals to define a tailored technology roadmap.</p></div>
+      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-pencil-ruler"></i> Design</h3><p>Custom solution architecture aligned with academic workflows, accessibility, and compliance standards.</p></div>
+      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-code"></i> Development</h3><p>Agile development with cloud-native, scalable, and secure implementation across all service layers.</p></div>
+      <div class="card reveal-scale reveal-delay-3"><h3 class="card-title"><i class="fas fa-rocket"></i> Deployment</h3><p>Seamless deployment, data migration, and integration with existing institutional systems.</p></div>
+      <div class="card reveal-scale reveal-delay-4"><h3 class="card-title"><i class="fas fa-headset"></i> Support</h3><p>Ongoing maintenance, training, and technical support to ensure long-term institutional success.</p></div>
+    </div>
+  </section>
+
+  <!-- CTA BANNER -->
+  <section class="intern-banner blue-banner reveal">
+    <div class="intern-icon-circle"><i class="fas fa-laptop-code"></i></div>
+    <div class="intern-label">SRCAA IT Solutions</div>
+    <div class="intern-topic">Get notified when our IT solutions launch &mdash; partner with SRCAA for academic technology.</div>
+    <p class="intern-desc">Whether you represent a university, college, or research centre, our team is ready to discuss your technology needs. Reach out to express interest or request early access.</p>
+    <a href="mailto:srcaacontact@gmail.com?subject=SRCAA%20IT%20Solutions%20Inquiry" class="apply-link">Get in Touch <i class="fas fa-arrow-right"></i></a>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+        <span class="footer-brand-text">SRCAA</span>
+      </div>
+      <p class="footer-desc">Shakti Research Centre &amp; Academia. Est. 2024</p>
+    </div>
+    <div>
+      <h3 class="footer-col-title">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
+        <li><a href="index.html#founder"><i class="fas fa-chevron-right"></i> Founder</a></li>
+        <li><a href="index.html#santosh"><i class="fas fa-chevron-right"></i> Associate Researcher</a></li>
+        <li><a href="index.html#team"><i class="fas fa-chevron-right"></i> Team</a></li>
+        <li><a href="index.html#press"><i class="fas fa-chevron-right"></i> Publications</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3 class="footer-col-title">Initiatives</h3>
+      <ul class="footer-links">
+        <li><a href="global-review.html"><i class="fas fa-chevron-right"></i> SGRCR <span class="nav-badge-new">New</span></a></li>
+        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations</a></li>
+        <li><a href="it-solutions.html"><i class="fas fa-chevron-right"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a></li>
+        <li><a href="online-courses.html"><i class="fas fa-chevron-right"></i> Online Courses <span class="nav-badge">Soon</span></a></li>
+      </ul>
+      <h3 class="footer-col-title" style="margin-top:1.5rem">Contact</h3>
+      <div class="footer-contact-row"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
+    </div>
+  </div>
+  <div class="footer-copy">&copy; 2026 SRCAA &mdash; Shakti Research Centre and Academia. All rights reserved.</div>
+</footer>
+
+<!-- SCRIPTS -->
+<script>
+  function toggleMenu() { document.getElementById('navMobile').classList.toggle('active'); }
+  function closeMobileMenu() { document.getElementById('navMobile').classList.remove('active'); }
+  document.querySelectorAll('.nav-links a').forEach(function(a) { a.addEventListener('click', closeMobileMenu); });
+
+  function setCookie(n,v,d){ var e=new Date(); e.setTime(e.getTime()+d*864e5); document.cookie=n+"="+v+";expires="+e.toUTCString()+";path=/"; }
+  function getCookie(n){ var v="; "+document.cookie, p=v.split("; "+n+"="); return p.length===2?p.pop().split(";").shift():null; }
+  function acceptCookies(){ setCookie('cookieConsent','accepted',365); document.getElementById('cookie-banner').classList.remove('show'); }
+  function declineCookies(){ setCookie('cookieConsent','declined',7); document.getElementById('cookie-banner').classList.remove('show'); }
+  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 1000); });
+
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
+    observer.observe(el);
+  });
+
+  window.addEventListener('scroll', function() {
+    var navbar = document.getElementById('navbar');
+    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  document.querySelectorAll('img[data-fallback]').forEach(function(img) {
+    img.addEventListener('error', function() {
+      if (img.dataset.fallback && img.src !== img.dataset.fallback) {
+        img.src = img.dataset.fallback;
+      }
+    });
+  });
+</script>
+</body>
+</html>
