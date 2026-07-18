@@ -26,6 +26,15 @@
     .policy-table tr:nth-child(even) td{background:rgba(0,0,0,.03);}
     .policy-note{font-style:italic;font-size:.9rem;color:#6b6b6b;margin-top:.5rem;}
     .policy-source{font-size:.9rem;color:#6b6b6b;margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(0,0,0,.08);}
+    .editor-contact{display:flex;flex-direction:column;gap:.4rem;margin-top:.85rem;padding-top:.85rem;border-top:1px solid rgba(0,0,0,.08);}
+    .editor-contact a{font-size:.85rem;color:var(--brown-700,#5c4033);text-decoration:none;display:flex;align-items:center;gap:.4rem;}
+    .editor-contact a:hover{text-decoration:underline;}
+    .editor-contact i{color:var(--brown-500,#8a5a3c);width:14px;text-align:center;}
+    .archive-list{list-style:none;margin:.5rem 0 1.25rem;padding:0;}
+    .archive-list li{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.5rem;padding:.85rem 1rem;border:1px solid rgba(0,0,0,.1);border-radius:10px;margin-bottom:.6rem;}
+    .archive-list .archive-meta{font-size:.9rem;color:#6b6b6b;}
+    .archive-list a.archive-link{font-size:.9rem;font-weight:600;color:var(--brown-700,#5c4033);text-decoration:none;display:inline-flex;align-items:center;gap:.35rem;}
+    .archive-list a.archive-link:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
@@ -53,7 +62,6 @@
     <div class="nav-links" id="navLinks">
       <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
       <a href="index.html#founder"><i class="fas fa-user-tie"></i> Founder</a>
-      <a href="index.html#santosh"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
       <a href="index.html#team"><i class="fas fa-users"></i> Team</a>
       <a href="global-review.html" class="active"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
       <a href="accreditations.html"><i class="fas fa-certificate"></i> Accreditations</a>
@@ -65,7 +73,6 @@
   <div class="nav-mobile" id="navMobile">
     <a href="index.html#about" onclick="closeMobileMenu()"><i class="fas fa-info-circle"></i> About</a>
     <a href="index.html#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder</a>
-    <a href="index.html#santosh" onclick="closeMobileMenu()"><i class="fas fa-user-graduate"></i> Associate Researcher</a>
     <a href="index.html#team" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Team</a>
     <a href="global-review.html" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> SGRCR <span class="nav-badge-new">New</span></a>
     <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations</a>
@@ -80,7 +87,7 @@
   <div class="page-hero-grid"></div>
   <div class="page-hero-content">
     <div class="page-hero-icon" style="background:linear-gradient(135deg, var(--brown-500), var(--brown-700));padding:12px"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" style="width:100%;height:100%;object-fit:contain;" /></div>
-    <div class="section-badge brown-badge"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" style="width:16px;height:16px;object-fit:contain;border-radius:50%" /> Peer-Reviewed Journal</div>
+    <div class="section-badge brown-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0"><path d="M4 5.75C4 4.78 4.78 4 5.75 4H11.4V19.4H5.75C4.78 19.4 4 18.62 4 17.65V5.75Z" fill="var(--brown-500,#8a5a3c)"/><path d="M20 5.75C20 4.78 19.22 4 18.25 4H12.6V19.4H18.25C19.22 19.4 20 18.62 20 17.65V5.75Z" fill="var(--brown-700,#5c4033)"/><path d="M11.4 4H12.6V19.4H11.4V4Z" fill="#fff" opacity=".35"/></svg> Peer-Reviewed Journal</div>
     <h1 class="page-hero-title">SRCAA Global Review of Contemporary Research</h1>
     <p class="page-hero-sub">An open-access, double-blind, multidisciplinary peer-reviewed journal publishing original research with DOI assignment and global indexing.</p>
   </div>
@@ -229,22 +236,23 @@
       <h2 class="section-title brown-title">Our Editors</h2>
     </div>
     <div class="cards-grid">
-      <div class="card brown-card reveal-scale"><h3 class="card-title"><i class="fas fa-user-tie"></i> Sudhakaran T</h3><div class="card-sub">Founder &amp; Chairperson &mdash; SRCAA Global Review of Contemporary Research</div><p>Associate Researcher, Shakti Research Centre and Academia (SRCAA). In-charge of Seshadripuram Research Foundation and Seshadripuram Journal of Social Sciences activities.<br>Yelahanka, Bangalore.</p></div>
+      <div class="card brown-card reveal-scale"><div class="editor-avatar">ST</div><h3 class="card-title"><i class="fas fa-user-tie"></i> Sudhakaran T</h3><div class="card-sub">Founder &amp; Chairperson &mdash; SRCAA Global Review of Contemporary Research</div><p>Associate Researcher, Shakti Research Centre and Academia (SRCAA). In-charge of Seshadripuram Research Foundation and Seshadripuram Journal of Social Sciences activities.<br>Yelahanka, Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishnan</h3><div class="card-sub">Editor-in-Chief &mdash; SRCAA Global Review of Contemporary Research</div><p>M.Com, MBA, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Associate Professor, Department of Commerce and Management, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-1"><div class="editor-avatar">AR</div><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishnan</h3><div class="card-sub">Editor-in-Chief &mdash; SRCAA Global Review of Contemporary Research</div><p>M.Com, MBA, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Associate Professor, Department of Commerce and Management, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Sowmya D N</h3><div class="card-sub">Editorial Member</div><p>Director, Post Graduate Department of Commerce, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-2"><div class="editor-avatar">SD</div><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Sowmya D N</h3><div class="card-sub">Editorial Member</div><p>Director, Post Graduate Department of Commerce, Seshadripuram First Grade College.<br>Yelahanka, Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-3"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Santosh Nelamakanahalli Chikkamari</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, Ph.D. Professor, University of Sydney. Sessional Lecturer, Charles Sturt University, New South Wales, Australia.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-3"><div class="editor-avatar">SN</div><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Santosh Nelamakanahalli Chikkamari</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, Ph.D. Professor, University of Sydney. Sessional Lecturer, Charles Sturt University, New South Wales, Australia.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-4"><h3 class="card-title"><i class="fas fa-laptop-code"></i> Abhi C</h3><div class="card-sub">Head of IT</div><p>SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-4"><div class="editor-avatar">AC</div><h3 class="card-title"><i class="fas fa-laptop-code"></i> Abhi C</h3><div class="card-sub">Head of IT</div><p>SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-5"><h3 class="card-title"><i class="fas fa-balance-scale"></i> Bindu C</h3><div class="card-sub">Legal Advisor</div><p>B.Com, LLB. SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-5"><div class="editor-avatar">BC</div><h3 class="card-title"><i class="fas fa-balance-scale"></i> Bindu C</h3><div class="card-sub">Legal Advisor</div><p>B.Com, LLB. SRCAA Global Review of Contemporary Research and Shakti Research Centre and Academia (SRCAA).<br>Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Shashikala C S</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, PGDBA, B.Ed, Ph.D in Commerce. Assistant Professor, Department of Commerce and Management, SSMRV College.<br>Bangalore.</p></div>
+      <div class="card brown-card reveal-scale"><div class="editor-avatar">SC</div><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Shashikala C S</h3><div class="card-sub">Associate Researcher &mdash; Shakti Research Centre and Academia (SRCAA)</div><p>M.Com, PGDBA, B.Ed, Ph.D in Commerce. Assistant Professor, Department of Commerce and Management, SSMRV College.<br>Bangalore.</p></div>
 
-      <div class="card brown-card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Pruthvi N</h3><div class="card-sub">Editor-in-Chief</div><p>MBA, M.Com, PGDM, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Head of Department &amp; Associate Professor, Department of Commerce and Management, Surana Evening College.<br>Bangalore.</p></div>
+      <div class="card brown-card reveal-scale reveal-delay-1"><div class="editor-avatar">PN</div><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Pruthvi N</h3><div class="card-sub">Editor-in-Chief</div><p>MBA, M.Com, PGDM, Ph.D. Associate Researcher, Shakti Research Centre and Academia (SRCAA). Head of Department &amp; Associate Professor, Department of Commerce and Management, Surana Evening College.<br>Bangalore.</p></div>
     </div>
+
   </section>
 
   <!-- EDITORIAL GUIDELINES -->
@@ -500,24 +508,99 @@
     </div>
   </section>
 
-  <!-- CURRENT ISSUE -->
-  <section class="section reveal" id="current-issue">
+  <!-- JOURNAL PARTICULARS & PUBLISHER DETAILS -->
+  <section class="section reveal" id="journal-particulars">
     <div class="section-header">
-      <div class="section-badge brown-badge"><i class="fas fa-newspaper"></i> Current Issue</div>
-      <h2 class="section-title brown-title">Volume 1, Issue 1</h2>
+      <div class="section-badge brown-badge"><i class="fas fa-id-card"></i> ISSN India Compliance</div>
+      <h2 class="section-title brown-title">Journal Particulars &amp; Publisher Details</h2>
     </div>
-    <div class="coming-soon-section" style="padding:0;min-height:auto;">
-      <div class="coming-soon-card reveal-scale">
-        <div class="coming-soon-badge"><i class="fas fa-clock"></i> Coming Soon</div>
-        <div class="coming-soon-icon"><i class="fas fa-book-open"></i></div>
-        <h3 class="coming-soon-title">The Inaugural Issue is on its Way</h3>
-        <p class="coming-soon-desc">SGRCR's first issue is currently being finalised. Once published, the table of contents, article DOIs, and full-text links for the current issue will appear here.</p>
-        <div class="coming-soon-features">
-          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Peer-reviewed articles with DOI</div>
-          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Open-access full text</div>
-          <div class="coming-soon-feature"><i class="fas fa-check-circle"></i> Author &amp; abstract listings</div>
+    <div class="journal-box brown-border reveal-scale">
+      <table class="policy-table">
+        <tbody>
+          <tr><td><strong>Title of the Journal</strong></td><td>SRCAA Global Review of Contemporary Research (SGRCR)</td></tr>
+          <tr><td><strong>Print ISSN</strong></td><td>Applied for</td></tr>
+          <tr><td><strong>e-ISSN</strong></td><td>Applied for</td></tr>
+          <tr><td><strong>DOI Prefix</strong></td><td>To be assigned (Crossref)</td></tr>
+          <tr><td><strong>Language of Publication</strong></td><td>English</td></tr>
+          <tr><td><strong>Subject / Scope</strong></td><td>Commerce, Management, Economics, Social Sciences, and allied interdisciplinary fields</td></tr>
+          <tr><td><strong>Periodicity</strong></td><td>Bi-annual (twice yearly)</td></tr>
+          <tr><td><strong>Year of Commencement</strong></td><td>2026</td></tr>
+          <tr><td><strong>Publisher / Owner</strong></td><td>Shakti Research Centre and Academia (SRCAA)</td></tr>
+          <tr><td><strong>Country of Publication</strong></td><td>India</td></tr>
+          <tr><td><strong>Format of Publication</strong></td><td>Online (Open Access)</td></tr>
+          <tr><td><strong>Registered Office</strong></td><td>Bengaluru, Karnataka, India</td></tr>
+        </tbody>
+      </table>
+      <p class="policy-note">Print/e-ISSN and DOI prefix fields will be updated with registration numbers immediately upon confirmation from the ISSN National Centre (India) and Crossref.</p>
+    </div>
+  </section>
+
+  <!-- PUBLICATION FREQUENCY / SCHEDULE -->
+  <section class="section reveal" id="publication-frequency">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-calendar-check"></i> Schedule</div>
+      <h2 class="section-title brown-title">Publication Frequency</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">SGRCR is published on a fixed, bi-annual schedule to meet ISSN India and indexing-body requirements for regularity and timeliness.</p>
+      <table class="policy-table">
+        <thead><tr><th>Issue</th><th>Submission Window</th><th>Publication Month</th></tr></thead>
+        <tbody>
+          <tr><td>Volume 1, Issue 1</td><td>Rolling (2025&ndash;26)</td><td>2026</td></tr>
+          <tr><td>Volume 1, Issue 2</td><td>To be announced</td><td>To be announced</td></tr>
+          <tr><td>Volume 2, Issue 1</td><td>To be announced</td><td>To be announced</td></tr>
+        </tbody>
+      </table>
+      <p class="policy-note">The publication calendar will be updated on this page at the start of each editorial cycle; any change to periodicity is announced at least one issue in advance.</p>
+    </div>
+  </section>
+
+  <!-- ARCHIVES -->
+  <section class="section reveal" id="archives">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-archive"></i> Archives</div>
+      <h2 class="section-title brown-title">Article-wise Archive</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <p class="about-lead">Every published issue is retained here permanently, with article-level links, for continuity of access as required under ISSN India and COPE archiving standards.</p>
+      <ul class="archive-list">
+<li><details open><summary><strong>Volume 1  Issue 1 (2026)</strong></summary><ul class="archive-list">
+<li><span class="archive-meta"><strong>Article 1</strong>  Conscious Consumers, Connected Futures: Digital Marketing for Sustainable FMCG Growth Shaping Green Choices in the
+Digital Era &mdash; <em> BHARATHI S,   Dr. V.HEMANTH KUMAR</em></span><a href="https://drive.google.com/file/d/1Hu-wST6DfNMwrbWjypvts0pl3eSD1QS1/view" target="_blank" class="archive-link">Open Article</a></li>
+<li><span class="archive-meta"><strong>Article 2</strong>  Ai In Business Decision Making: Transforming Organisational Intelligence In The Digital Era;
+Digital Era &mdash; <em>Dr.Anjana Radhakrishnana, Shrivardhan P</em></span><a href="https://drive.google.com/file/d/1b1g6LAa6yEDjKt34e94xksqSJb9HUcC2/view?usp=sharing" target="_blank" class="archive-link">Open Article</a></li>
+<li><span class="archive-meta"><strong>Article 3</strong>  GEN Z Expections From HR : A Study On Flexibility,Mental Health Support And Digital Integration;
+Digital Era &mdash; <em> DR.Deeksha B Kailash, Dr.Brahma Teja N</em></span><a href="https://drive.google.com/file/d/1yM97IZC77tpk2Ro4IIv8XgxPZ5XlY4_g/view?usp=sharing" target="_blank" class="archive-link">Open Article</a></li>
+      <p class="policy-note">Individual article-level links (title, authors, abstract, DOI, PDF) will be added under each issue as they are assigned Crossref DOIs.</p>
+    </div>
+  </section>
+
+  <!-- EDITORIAL / CONTACT OFFICE -->
+  <section class="section reveal" id="editorial-office">
+    <div class="section-header">
+      <div class="section-badge brown-badge"><i class="fas fa-building"></i> Contact</div>
+      <h2 class="section-title brown-title">Editorial &amp; Contact Office</h2>
+    </div>
+    <div class="journal-box brown-border reveal-scale">
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-map-marker-alt"></i> Registered / Editorial Office</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Shakti Research Centre and Academia (SRCAA)</li>
+            <li><i class="fas fa-check"></i> Bengaluru, Karnataka, India</li>
+            <li><i class="fas fa-check"></i> Full postal address &ndash; to be added</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-address-book"></i> Correspondence</h3>
+          <ul class="press-list">
+            <li><i class="fas fa-check"></i> Editorial queries: <a href="mailto:admin@srcaa.co.in">admin@srcaa.co.in</a></li>
+            <li><i class="fas fa-check"></i> General queries: <a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></li>
+            <li><i class="fas fa-check"></i> Editorial Office contact number &ndash; to be added</li>
+          </ul>
         </div>
       </div>
+      <a href="mailto:admin@srcaa.co.in" class="btn btn-primary" style="margin-top:1rem;display:inline-flex"><i class="fas fa-envelope"></i> Contact the Editorial Office</a>
     </div>
   </section>
 
