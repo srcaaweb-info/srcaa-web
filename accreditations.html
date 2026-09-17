@@ -3,167 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Accreditations &amp; Quality Standards &mdash; SRCAA</title>
+  <title>Accreditations &amp; Quality Standards — SRCAA</title>
+  <meta name="description" content="Accreditations, quality standards, and professional memberships of Shakti Research Centre & Academia (SRCAA)." />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner">
+<div id="cookie-banner" role="dialog" aria-live="polite">
   <div class="cookie-content">
-    <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
-    <div class="cookie-text">We value your privacy. By continuing you agree to our <a href="#">Privacy</a> &amp; <a href="#">Terms</a>.</div>
+    <div class="cookie-icon"><i class="fas fa-shield-alt"></i></div>
+    <div class="cookie-text">We value institutional privacy and data integrity. By continuing you agree to our academic usage guidelines and policy.</div>
   </div>
   <div class="cookie-buttons">
-    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">&#10005;</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">&#10003; Accept</button>
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()" aria-label="Decline cookies">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()" aria-label="Accept cookies">Accept</button>
   </div>
 </div>
 
-<!-- NAVBAR -->
-<nav id="navbar">
+<!-- TOP INSTITUTIONAL NAVBAR -->
+<nav id="navbar" role="navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
-      <span class="nav-logo-text">SRCAA</span>
+    <a href="index.html" class="nav-logo" aria-label="SRCAA Homepage">
+      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Emblem" data-fallback="logo.svg" /></div>
+      <div class="nav-logo-meta">
+        <span class="nav-logo-text">SRCAA</span>
+        <span class="nav-logo-sub">Research &amp; Academia</span>
+      </div>
     </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
     <div class="nav-links" id="navLinks">
-      <a href="index.html#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="index.html#about"><i class="fas fa-landmark"></i> About</a>
       <a href="index.html#founder"><i class="fas fa-user-tie"></i> Founder</a>
-      <a href="index.html#team"><i class="fas fa-users"></i> Team</a>
-      <a href="global-review.html"><i class="fas fa-book-open"></i> SGRCR Journal <span class="nav-badge-new">New</span></a>
+      <a href="index.html#anjana"><i class="fas fa-user-graduate"></i> Dr. Anjana</a>
+      <a href="index.html#board"><i class="fas fa-users"></i> Academic Board</a>
       <a href="accreditations.html" class="active"><i class="fas fa-certificate"></i> Accreditations</a>
-      <a href="it-solutions.html" class="nav-it-highlight"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
-      <a href="online-courses.html"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
-      <a href="index.html#press"><i class="fas fa-book"></i> Publications</a>
+      <a href="index.html#press"><i class="fas fa-book-open"></i> Publications</a>
+      <a href="index.html#contact"><i class="fas fa-envelope"></i> Contact</a>
     </div>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="index.html#about" onclick="closeMobileMenu()"><i class="fas fa-info-circle"></i> About</a>
-    <a href="index.html#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder</a>
-    <a href="index.html#team" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Team</a>
-    <a href="global-review.html" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> SGRCR Journal <span class="nav-badge-new">New</span></a>
-    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations</a>
-    <a href="it-solutions.html" class="nav-it-highlight" onclick="closeMobileMenu()"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
-    <a href="online-courses.html" onclick="closeMobileMenu()"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
-    <a href="index.html#press" onclick="closeMobileMenu()"><i class="fas fa-book"></i> Publications</a>
+    <a href="https://www.sgrcr.srcaa.co.in/" target="_blank" rel="noopener noreferrer" class="nav-mobile-highlight" id="navMobileSgrcr" onclick="closeMobileMenu()">
+      <span><i class="fas fa-book-journal-whills"></i> <strong>SGRCR Journal Portal</strong></span>
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+    <a href="index.html#about" onclick="closeMobileMenu()"><i class="fas fa-landmark"></i> About SRCAA</a>
+    <a href="index.html#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder's Desk</a>
+    <a href="index.html#anjana" onclick="closeMobileMenu()"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishna</a>
+    <a href="index.html#board" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Academic Board &amp; Faculty</a>
+    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations &amp; Quality</a>
+    <a href="index.html#press" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> Scholarly Publications</a>
+    <a href="index.html#contact" onclick="closeMobileMenu()"><i class="fas fa-envelope"></i> Institutional Contact</a>
   </div>
 </nav>
 
 <!-- PAGE HERO -->
-<section class="page-hero emerald-hero">
-  <div class="page-hero-grid"></div>
+<header class="page-hero">
   <div class="page-hero-content">
-    <div class="page-hero-icon" style="background:linear-gradient(135deg, var(--emerald-600), var(--emerald-700))"><i class="fas fa-certificate"></i></div>
-    <div class="section-badge"><i class="fas fa-shield-alt"></i> Quality &amp; Recognition</div>
+    <div class="page-hero-icon"><i class="fas fa-certificate"></i></div>
+    <div class="section-badge"><i class="fas fa-shield-alt"></i> Quality &amp; Governance</div>
     <h1 class="page-hero-title">Accreditations &amp; Quality Standards</h1>
-    <p class="page-hero-sub">SRCAA holds internationally recognised accreditations and professional memberships that affirm our commitment to academic quality, ethical research, and global standards.</p>
+    <p class="page-hero-sub">SRCAA maintains verifiable accreditations, institutional registry listings, and professional memberships that validate our dedication to international research ethics and academic excellence.</p>
   </div>
-</section>
+</header>
 
-<main class="main-content">
+<!-- MAIN CONTENT -->
+<main class="main-content" id="main-content">
 
-  <!-- ABOUT -->
-  <section class="section reveal">
+  <!-- OVERVIEW -->
+  <section class="section reveal" aria-labelledby="overview-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-info-circle"></i> Overview</div>
-      <h2 class="section-title">Our Quality Commitment</h2>
+      <div class="section-badge"><i class="fas fa-landmark"></i> Standards Framework</div>
+      <h2 class="section-title" id="overview-title">Our Quality Commitment</h2>
+      <p class="section-sub">A formal institutional commitment to international recognition, quality control, and persistent academic transparency.</p>
     </div>
-    <div class="about-box emerald-border reveal-scale">
-      <p class="about-lead">Shakti Research Centre &amp; Academia (SRCAA) has demonstrated conformity with internationally recognised standards through its accreditation under the <strong>International Trade Council (ITC) Conformity Assessment and Recognition Framework</strong> and is registered with the <strong>Global Association of Online Trainers and Examiners (GAOTE)</strong>. SRCAA is also listed with the <strong>Research Organization Registry (ROR)</strong> and holds an International Quality Certificate accredited by ITC.</p>
-      <p class="about-lead">Beyond accreditations, SRCAA actively strengthens its global academic presence through professional engagement and membership with organisations including the <strong>Research Council of India (RCI)</strong>, the <strong>American Psychological Association (APA)</strong>, the <strong>Commerce and Management Association of India (CMAOI)</strong>, and endorsement of the <strong>San Francisco Declaration on Research Assessment (DORA)</strong>.</p>
+    <div class="about-box reveal-scale">
+      <p class="about-lead"><strong>Shakti Research Centre &amp; Academia (SRCAA)</strong> has demonstrated conformity with internationally recognized institutional standards through its accredited status under the <strong>International Trade Council (ITC) Conformity Assessment and Recognition Framework</strong>. In addition, SRCAA is formally registered with the <strong>Global Association of Online Trainers and Examiners (GAOTE)</strong>, ensuring operational excellence across modern digital learning and remote examination protocols.</p>
+      <p class="about-lead">To ensure international discoverability and persistent institutional identification, SRCAA is indexed within the <strong>Research Organization Registry (ROR)</strong>. The institution also holds an accredited <strong>Certificate of Quality (85% Grade B)</strong> under the International Quality Certification Program for Quality Management Systems and Documentation Control.</p>
+      <p class="about-lead">Beyond formal accreditations, SRCAA actively advances scholarly exchange through active professional engagement with the <strong>Research Council of India (RCI)</strong>, the <strong>American Psychological Association (APA)</strong>, the <strong>Commerce and Management Association of India (CMAOI)</strong>, and an official endorsement of the <strong>San Francisco Declaration on Research Assessment (DORA)</strong>.</p>
     </div>
   </section>
 
-  <!-- ACCREDITATIONS -->
-  <section class="section reveal">
+  <!-- RECOGNISED ACCREDITATIONS GRID -->
+  <section class="section reveal" aria-labelledby="accred-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-award"></i> Accreditations</div>
-      <h2 class="section-title">Recognised Accreditations</h2>
+      <div class="section-badge"><i class="fas fa-award"></i> Verification &amp; Registries</div>
+      <h2 class="section-title" id="accred-title">Institutional Accreditations</h2>
+      <p class="section-sub">Formal credentials recognized by international and national academic bodies.</p>
     </div>
     <div class="accred-grid">
-      <div class="accred-card reveal-scale"><i class="fas fa-certificate"></i><h3>ITC Accreditation</h3><p>Accredited under the International Trade Council Conformity Assessment and Recognition Framework &mdash; affirming institutional quality and operational standards.</p></div>
-      <div class="accred-card reveal-scale reveal-delay-1"><i class="fas fa-globe-asia"></i><h3>GAOTE Registered</h3><p>Registered with the Global Association of Online Trainers and Examiners, supporting online training, examination, and certification excellence.</p></div>
-      <div class="accred-card reveal-scale reveal-delay-2"><i class="fas fa-medal"></i><h3>QIB Certification</h3><p>International Quality Certificate (85% Grade B) accredited by ITC through QIB Certification &mdash; Quality Management System &amp; Documentation Control.</p><a href="https://www.qibcertification.org/en/verify?cert=QIB-BASIC-1773566474897-G91BHQ" target="_blank" class="btn btn-outline" style="margin-top:1rem;display:inline-flex"><i class="fas fa-check-circle"></i> Verify Certificate</a></div>
-      <div class="accred-card reveal-scale reveal-delay-3"><i class="fas fa-database"></i><h3>ROR Listed</h3><p>Registered with the Research Organization Registry, providing a persistent unique identifier for SRCAA in the global research ecosystem.</p></div>
+      <div class="accred-card reveal-scale" id="accred-itc">
+        <i class="fas fa-certificate"></i>
+        <h3>ITC Accreditation</h3>
+        <p>Accredited under the International Trade Council Conformity Assessment and Recognition Framework &mdash; establishing verified institutional quality and operational standards.</p>
+      </div>
+
+      <div class="accred-card reveal-scale reveal-delay-1" id="accred-gaote">
+        <i class="fas fa-globe-asia"></i>
+        <h3>GAOTE Registered Institution</h3>
+        <p>Formally registered with the Global Association of Online Trainers and Examiners, certifying excellence in digital pedagogy, academic mentoring, and examination procedures.</p>
+      </div>
+
+      <div class="accred-card reveal-scale reveal-delay-2" id="accred-qib">
+        <i class="fas fa-medal"></i>
+        <h3>International Quality Certificate</h3>
+        <p>International Quality Certificate (85% Grade B) accredited by ITC through QIB Certification &mdash; verifying our Quality Management System and Documentation Control Framework.</p>
+        <div style="margin-top: auto; padding-top: 0.75rem;">
+          <a href="https://www.qibcertification.org/en/verify?cert=QIB-BASIC-1773566474897-G91BHQ" target="_blank" rel="noopener" class="btn btn-outline" id="btnVerifyQIB"><i class="fas fa-check-circle"></i> Verify Certificate</a>
+        </div>
+      </div>
+
+      <div class="accred-card reveal-scale reveal-delay-3" id="accred-ror">
+        <i class="fas fa-database"></i>
+        <h3>ROR Listed Organization</h3>
+        <p>Listed within the Research Organization Registry (ROR), providing a globally unique, persistent institutional identifier for scholarly research output and international grant referencing.</p>
+      </div>
     </div>
   </section>
 
-  <!-- MEMBERSHIPS -->
-  <section class="section reveal">
+  <!-- PROFESSIONAL MEMBERSHIPS -->
+  <section class="section reveal" aria-labelledby="memberships-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-handshake"></i> Memberships</div>
-      <h2 class="section-title">Professional Memberships</h2>
+      <div class="section-badge"><i class="fas fa-handshake"></i> Academic Alliances</div>
+      <h2 class="section-title" id="memberships-title">Professional Memberships</h2>
+      <p class="section-sub">Active organizational engagement with specialized research associations across sciences and commerce.</p>
     </div>
     <div class="cards-grid">
-      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-university"></i> RCI Member</h3><p>Member of the Research Council of India &mdash; supporting research collaboration and academic development across Indian institutions.</p></div>
-      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-brain"></i> APA Affiliated</h3><p>Professional engagement with the American Psychological Association, advancing psychological and behavioural research standards.</p></div>
-      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-balance-scale"></i> CMAOI Partner</h3><p>Partner of the Commerce and Management Association of India, fostering scholarship in commerce, management, and allied disciplines.</p></div>
-      <div class="card reveal-scale reveal-delay-3"><h3 class="card-title"><i class="fas fa-scroll"></i> DORA Endorser</h3><p>Public endorser of the San Francisco Declaration on Research Assessment &mdash; committed to responsible, transparent research evaluation.</p></div>
+      <div class="card reveal-scale" id="member-rci">
+        <div class="card-header-row">
+          <div class="card-avatar"><i class="fas fa-university"></i></div>
+          <div>
+            <h3 class="card-title">RCI Member</h3>
+            <div class="card-sub">Research Council of India</div>
+          </div>
+        </div>
+        <p>Institutional member supporting interdisciplinary research collaboration, academic development, and faculty seminars across Indian universities.</p>
+      </div>
+
+      <div class="card reveal-scale reveal-delay-1" id="member-apa">
+        <div class="card-header-row">
+          <div class="card-avatar"><i class="fas fa-brain"></i></div>
+          <div>
+            <h3 class="card-title">APA Affiliation</h3>
+            <div class="card-sub">American Psychological Association</div>
+          </div>
+        </div>
+        <p>Professional engagement advancing behavioural science research methodologies, pedagogical psychology, and ethical participant protocols.</p>
+      </div>
+
+      <div class="card reveal-scale reveal-delay-2" id="member-cmaoi">
+        <div class="card-header-row">
+          <div class="card-avatar"><i class="fas fa-balance-scale"></i></div>
+          <div>
+            <h3 class="card-title">CMAOI Partner</h3>
+            <div class="card-sub">Commerce &amp; Management Association of India</div>
+          </div>
+        </div>
+        <p>Partner institution dedicated to promoting applied research, corporate finance studies, and empirical business pedagogy.</p>
+      </div>
+
+      <div class="card reveal-scale" id="member-dora">
+        <div class="card-header-row">
+          <div class="card-avatar"><i class="fas fa-scroll"></i></div>
+          <div>
+            <h3 class="card-title">DORA Signatory</h3>
+            <div class="card-sub">San Francisco Declaration</div>
+          </div>
+        </div>
+        <p>Public endorser of DORA principles committed to evaluating scientific research based on intrinsic merit, methodology, and societal impact.</p>
+      </div>
     </div>
   </section>
 
-  <!-- QUALITY POLICY / DORA -->
-  <section class="section reveal">
+  <!-- DORA STATEMENT CHARTER -->
+  <section class="section reveal" aria-labelledby="dora-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-shield-alt"></i> Quality Policy</div>
-      <h2 class="section-title">DORA Statement</h2>
+      <div class="section-badge"><i class="fas fa-shield-alt"></i> Ethical Charter</div>
+      <h2 class="section-title" id="dora-title">Responsible Research Assessment</h2>
+      <p class="section-sub">Declaration of policy on transparent, equitable academic evaluation.</p>
     </div>
-    <div class="dora-card emerald-card reveal-scale">
-      <div class="dora-icon-circle emerald-icon"><i class="fas fa-shield-alt"></i></div>
-      <h3>Statement on Responsible Research Assessment</h3>
-      <p><strong>Effective from 01 March 2026</strong>, SRCAA publicly endorses the principles of the San Francisco Declaration on Research Assessment (DORA) and affirms its commitment to responsible, transparent, and equitable evaluation of research and researchers.</p>
-      <p>SRCAA emphasizes that research should be assessed based on its quality, originality, rigor, and societal impact, rather than relying solely on journal-based metrics.</p>
-      <p>Through its policies, publications, and academic initiatives, SRCAA aims to strengthen fair research assessment systems and contribute to a more balanced and meaningful global research ecosystem.</p>
-      <a href="https://sfdora.org/" target="_blank" class="btn btn-outline" style="margin-top:1.2rem;display:inline-flex"><i class="fas fa-external-link-alt"></i> Verify DORA Endorsement</a>
+    <div class="dora-card reveal-scale">
+      <div class="dora-icon-circle"><i class="fas fa-scroll"></i></div>
+      <h3>SRCAA Institutional DORA Statement</h3>
+      <p><strong>Effective from 01 March 2026</strong>, Shakti Research Centre &amp; Academia (SRCAA) publicly endorses the principles of the <strong>San Francisco Declaration on Research Assessment (DORA)</strong> and affirms its commitment to responsible, transparent, and equitable evaluation of scientific research and academic researchers.</p>
+      <p>SRCAA maintains that scholarly inquiry must be appraised on its intrinsic quality, methodological soundness, originality, reproducibility, and real-world societal impact, rather than relying uncritically on journal-based impact metrics.</p>
+      <p>Through its peer-review practices, internship mentorship, and research publishing standards, SRCAA actively contributes to cultivating a fairer and more meaningful global knowledge ecosystem.</p>
+      <div style="text-align: center; margin-top: 1.75rem;">
+        <a href="https://sfdora.org/" target="_blank" rel="noopener" class="btn btn-outline" id="btnVerifyDORA"><i class="fas fa-external-link-alt"></i> Learn More About DORA Principles</a>
+      </div>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer>
+<!-- INSTITUTIONAL FOOTER -->
+<footer role="contentinfo">
   <div class="footer-inner">
     <div>
       <div class="footer-brand">
-        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Emblem" data-fallback="logo.svg" /></div>
         <span class="footer-brand-text">SRCAA</span>
       </div>
-      <p class="footer-desc">Shakti Research Centre &amp; Academia. Est. 2024</p>
+      <p class="footer-desc">Shakti Research Centre &amp; Academia (Est. 2024). An accredited digital research institution committed to interdisciplinary scholarship, ethical evaluation, and academic capacity building.</p>
     </div>
     <div>
-      <h3 class="footer-col-title">Quick Links</h3>
+      <h3 class="footer-col-title">Academic Directory</h3>
       <ul class="footer-links">
-        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
-        <li><a href="index.html#founder"><i class="fas fa-chevron-right"></i> Founder</a></li>
-        <li><a href="index.html#santosh"><i class="fas fa-chevron-right"></i> Associate Researcher</a></li>
-        <li><a href="index.html#team"><i class="fas fa-chevron-right"></i> Team</a></li>
-        <li><a href="index.html#press"><i class="fas fa-chevron-right"></i> Publications</a></li>
-        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About SRCAA</a></li>
+        <li><a href="index.html#founder"><i class="fas fa-chevron-right"></i> Founder's Desk</a></li>
+        <li><a href="index.html#anjana"><i class="fas fa-chevron-right"></i> Dr. Anjana Radhakrishna</a></li>
+        <li><a href="index.html#board"><i class="fas fa-chevron-right"></i> Academic Board &amp; Faculty</a></li>
+        <li><a href="index.html#press"><i class="fas fa-chevron-right"></i> Scholarly Publications</a></li>
+        <li><a href="https://www.sgrcr.srcaa.co.in/" target="_blank" rel="noopener noreferrer" class="footer-highlight-link" title="Visit SGRCR Journal Portal (opens in new tab)"><i class="fas fa-external-link-alt"></i> <span>SGRCR Journal Portal</span> <span class="footer-tag-live">Live</span></a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">Initiatives</h3>
+      <h3 class="footer-col-title">Accreditations &amp; Policy</h3>
       <ul class="footer-links">
-        <li><a href="global-review.html"><i class="fas fa-chevron-right"></i> SGRCR <span class="nav-badge-new">New</span></a></li>
-        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations</a></li>
-        <li><a href="it-solutions.html"><i class="fas fa-chevron-right"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a></li>
-        <li><a href="online-courses.html"><i class="fas fa-chevron-right"></i> Online Courses <span class="nav-badge">Soon</span></a></li>
+        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations &amp; Quality</a></li>
+        <li><a href="index.html#dora"><i class="fas fa-chevron-right"></i> DORA Statement</a></li>
+        <li><a href="index.html#cert"><i class="fas fa-chevron-right"></i> Quality Certification</a></li>
+        <li><a href="index.html#internship"><i class="fas fa-chevron-right"></i> Research Internship Program</a></li>
+        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Academic Inquiries</a></li>
       </ul>
-      <h3 class="footer-col-title" style="margin-top:1.5rem">Contact</h3>
-      <div class="footer-contact-row"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
+      <div class="footer-contact-row" style="margin-top: 1.25rem;"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
     </div>
   </div>
   <div class="footer-copy">&copy; 2026 SRCAA &mdash; Shakti Research Centre and Academia. All rights reserved.</div>
 </footer>
 
-<!-- SCRIPTS -->
+<!-- JAVASCRIPT LOGIC -->
 <script>
   function toggleMenu() { document.getElementById('navMobile').classList.toggle('active'); }
   function closeMobileMenu() { document.getElementById('navMobile').classList.remove('active'); }
@@ -173,7 +247,7 @@
   function getCookie(n){ var v="; "+document.cookie, p=v.split("; "+n+"="); return p.length===2?p.pop().split(";").shift():null; }
   function acceptCookies(){ setCookie('cookieConsent','accepted',365); document.getElementById('cookie-banner').classList.remove('show'); }
   function declineCookies(){ setCookie('cookieConsent','declined',7); document.getElementById('cookie-banner').classList.remove('show'); }
-  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 1000); });
+  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 800); });
 
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
@@ -181,7 +255,7 @@
         e.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
     observer.observe(el);
@@ -189,7 +263,7 @@
 
   window.addEventListener('scroll', function() {
     var navbar = document.getElementById('navbar');
-    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
   });
 

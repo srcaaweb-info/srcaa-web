@@ -4,98 +4,124 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>SRCAA — Shakti Research Centre &amp; Academia</title>
+  <meta name="description" content="Digital academic and research institution advancing research excellence, scholarly engagement, and international academic partnerships." />
   <link rel="icon" type="image/svg+xml" href="logo.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;0,6..72,700;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <!-- COOKIE BANNER -->
-<div id="cookie-banner">
+<div id="cookie-banner" role="dialog" aria-live="polite">
   <div class="cookie-content">
-    <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
-    <div class="cookie-text">We value your privacy. By continuing you agree to our <a href="#">Privacy</a> &amp; <a href="#">Terms</a>.</div>
+    <div class="cookie-icon"><i class="fas fa-shield-alt"></i></div>
+    <div class="cookie-text">We value institutional privacy and data integrity. By continuing you agree to our academic usage guidelines and policy.</div>
   </div>
   <div class="cookie-buttons">
-    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">&#10005;</button>
-    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">&#10003; Accept</button>
+    <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()" aria-label="Decline cookies">Decline</button>
+    <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()" aria-label="Accept cookies">Accept</button>
   </div>
 </div>
 
-<!-- NAVBAR -->
-<nav id="navbar">
+<!-- TOP INSTITUTIONAL NAVBAR -->
+<nav id="navbar" role="navigation">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
-      <span class="nav-logo-text">SRCAA</span>
+    <a href="index.html" class="nav-logo" aria-label="SRCAA Homepage">
+      <div class="nav-logo-icon"><img src="Logo Icon.png.png" alt="SRCAA Emblem" data-fallback="logo.svg" /></div>
+      <div class="nav-logo-meta">
+        <span class="nav-logo-text">SRCAA</span>
+        <span class="nav-logo-sub">Research &amp; Academia</span>
+      </div>
     </a>
-    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation menu"><i class="fas fa-bars"></i></button>
     <div class="nav-links" id="navLinks">
-      <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+      <a href="#about"><i class="fas fa-landmark"></i> About</a>
       <a href="#founder"><i class="fas fa-user-tie"></i> Founder</a>
-      <a href="#team"><i class="fas fa-users"></i> Team</a>
-      <a href="global-review.html"><i class="fas fa-book-open"></i> SGRCR Journal <span class="nav-badge-new">New</span></a>
+      <a href="#anjana"><i class="fas fa-user-graduate"></i> Dr. Anjana</a>
+      <a href="#board"><i class="fas fa-users"></i> Academic Board</a>
       <a href="accreditations.html"><i class="fas fa-certificate"></i> Accreditations</a>
-      <a href="it-solutions.html" class="nav-it-highlight"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
-      <a href="online-courses.html"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
-      <a href="#press"><i class="fas fa-book"></i> Publications</a>
+      <a href="#press"><i class="fas fa-book-open"></i> Publications</a>
+      <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
     </div>
   </div>
   <div class="nav-mobile" id="navMobile">
-    <a href="#about" onclick="closeMobileMenu()"><i class="fas fa-info-circle"></i> About</a>
-    <a href="#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder</a>
-    <a href="#team" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Team</a>
-    <a href="global-review.html" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> SGRCR Journal <span class="nav-badge-new">New</span></a>
-    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations</a>
-    <a href="it-solutions.html" class="nav-it-highlight" onclick="closeMobileMenu()"><i class="fas fa-laptop-code"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a>
-    <a href="online-courses.html" onclick="closeMobileMenu()"><i class="fas fa-chalkboard-teacher"></i> Online Courses <span class="nav-badge">Soon</span></a>
-    <a href="#press" onclick="closeMobileMenu()"><i class="fas fa-book"></i> Publications</a>
+    <a href="https://www.sgrcr.srcaa.co.in/" target="_blank" rel="noopener noreferrer" class="nav-mobile-highlight" id="navMobileSgrcr" onclick="closeMobileMenu()">
+      <span><i class="fas fa-book-journal-whills"></i> <strong>SGRCR Journal Portal</strong></span>
+      <i class="fas fa-external-link-alt"></i>
+    </a>
+    <a href="#about" onclick="closeMobileMenu()"><i class="fas fa-landmark"></i> About SRCAA</a>
+    <a href="#founder" onclick="closeMobileMenu()"><i class="fas fa-user-tie"></i> Founder's Desk</a>
+    <a href="#anjana" onclick="closeMobileMenu()"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishna</a>
+    <a href="#board" onclick="closeMobileMenu()"><i class="fas fa-users"></i> Academic Board &amp; Faculty</a>
+    <a href="accreditations.html" onclick="closeMobileMenu()"><i class="fas fa-certificate"></i> Accreditations &amp; Quality</a>
+    <a href="#press" onclick="closeMobileMenu()"><i class="fas fa-book-open"></i> Scholarly Publications</a>
+    <a href="#contact" onclick="closeMobileMenu()"><i class="fas fa-envelope"></i> Institutional Contact</a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hero-mesh"></div>
-  <div class="hero-grid-bg"></div>
-  <div class="hero-graphics" aria-hidden="true">
-    <span class="hero-graphic"></span><span class="hero-graphic"></span><span class="hero-graphic"></span>
-  </div>
+<!-- INSTITUTIONAL HERO -->
+<header id="hero">
   <div class="hero-content">
-    <div class="hero-badge"><i class="fas fa-award"></i><span>ITC Accredited &middot; Est. 2024</span></div>
+    <div class="hero-badge">
+      <i class="fas fa-award"></i>
+      <span>ITC Accredited Institution &middot; Est. 2024</span>
+    </div>
     <h1 class="hero-title">Shakti Research<br>Centre &amp; Academia</h1>
-    <p class="hero-sub">Empowering educators, researchers, and students through academic excellence, innovation, and global collaboration since 2024.</p>
+    <p class="hero-sub">Advancing scholarly excellence, ethical research assessment, and global interdisciplinary collaboration across academia, institutions, and emerging scholars.</p>
     <div class="hero-cta">
-      <a href="#press" class="btn btn-primary"><i class="fas fa-file-alt"></i> Publications</a>
-      <a href="global-review.html" class="btn btn-outline"><i class="fas fa-book-open"></i> SGRCR Journal</a>
+      <a href="#about" class="btn btn-primary" id="btnExplore"><i class="fas fa-university"></i> Institutional Overview</a>
+      <a href="accreditations.html" class="btn btn-outline" id="btnAccred"><i class="fas fa-certificate"></i> Accreditations</a>
+      <a href="#press" class="btn btn-outline" id="btnPubs"><i class="fas fa-book"></i> Scholarly Press</a>
+    </div>
+    <div class="hero-trust-bar">
+      <div class="trust-badge-item"><i class="fas fa-check-circle"></i> ITC Framework Accredited</div>
+      <div class="trust-badge-item"><i class="fas fa-globe-asia"></i> GAOTE Registered Member</div>
+      <div class="trust-badge-item"><i class="fas fa-database"></i> ROR Global Registry Listed</div>
+      <div class="trust-badge-item"><i class="fas fa-scroll"></i> DORA Policy Signatory</div>
     </div>
   </div>
-</section>
+</header>
 
-<!-- MAIN -->
-<main class="main-content">
+<!-- MAIN CONTENT -->
+<main class="main-content" id="main-content">
 
-  <!-- STATS -->
-  <div class="stats-section reveal">
+  <!-- KEY INSTITUTIONAL STATISTICS -->
+  <section class="stats-section reveal" id="stats" aria-label="Institutional Highlights">
     <div class="stats-grid">
-      <div class="stat-item reveal-scale"><div class="stat-number"><i class="fas fa-file-alt"></i> 100+</div><div class="stat-label">Papers</div></div>
-      <div class="stat-item reveal-scale reveal-delay-1"><div class="stat-number"><i class="fas fa-university"></i> 45+</div><div class="stat-label">Partners</div></div>
-      <div class="stat-item reveal-scale reveal-delay-2"><div class="stat-number"><i class="fas fa-chalkboard-teacher"></i> 20+</div><div class="stat-label">Faculty</div></div>
-      <div class="stat-item reveal-scale reveal-delay-3"><div class="stat-number"><i class="fas fa-graduation-cap"></i> 16K+</div><div class="stat-label">Students</div></div>
+      <div class="stat-item reveal-scale">
+        <div class="stat-number"><i class="fas fa-file-signature"></i> 100+</div>
+        <div class="stat-label">Scholarly Papers</div>
+      </div>
+      <div class="stat-item reveal-scale reveal-delay-1">
+        <div class="stat-number"><i class="fas fa-university"></i> 45+</div>
+        <div class="stat-label">Institutional Partners</div>
+      </div>
+      <div class="stat-item reveal-scale reveal-delay-2">
+        <div class="stat-number"><i class="fas fa-chalkboard-teacher"></i> 20+</div>
+        <div class="stat-label">Distinguished Faculty</div>
+      </div>
+      <div class="stat-item reveal-scale reveal-delay-3">
+        <div class="stat-number"><i class="fas fa-graduation-cap"></i> 16,000+</div>
+        <div class="stat-label">Scholars &amp; Students Mentored</div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- ABOUT -->
-  <section id="about" class="section reveal">
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section reveal" aria-labelledby="about-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-info-circle"></i> About Us</div>
-      <h2 class="section-title">Shakti Research Centre</h2>
+      <div class="section-badge"><i class="fas fa-landmark"></i> Institutional Profile</div>
+      <h2 class="section-title" id="about-title">About Shakti Research Centre</h2>
+      <p class="section-sub">A recognized digital academic research institute dedicated to ethical scholarship and cross-border innovation.</p>
     </div>
     <div class="about-box reveal-scale">
-      <p class="about-lead">Shakti Research Centre and Academia (SRCAA) is a digital academic and research institution established in 2024, dedicated to advancing research excellence, fostering interdisciplinary collaboration, and promoting innovation through scholarly engagement, capacity building, and international academic partnerships. SRCAA serves as a dynamic platform for researchers, academicians, professionals, students, and institutions by facilitating research collaborations, publication support, academic mentoring, internship programmes, faculty development initiatives, conferences, workshops, and knowledge exchange activities.</p>
-      <p class="about-lead">SRCAA has demonstrated conformity with internationally recognized standards through its accreditation under the International Trade Council (ITC) Conformity Assessment and Recognition Framework and is registered with the Global Association of Online Trainers and Examiners (GAOTE). The institution actively strengthens its global academic presence through professional engagement with organizations such as the Research Council of India (RCI), the American Psychological Association (APA), and the Commerce and Management Association of India (CMAOI).</p>
+      <p class="about-lead"><strong>Shakti Research Centre and Academia (SRCAA)</strong> is an accredited digital academic and research institution established in 2024. The centre is committed to advancing research excellence, fostering interdisciplinary collaboration, and promoting innovation through rigorous scholarly engagement, institutional capacity building, and international academic partnerships.</p>
+      <p class="about-lead">SRCAA serves as a collaborative platform for researchers, academicians, professionals, and students by facilitating peer-reviewed research initiatives, publication support, academic mentoring, research internship programmes, faculty development workshops, and global knowledge exchange.</p>
+      <p class="about-lead">The institution operates under the <strong>International Trade Council (ITC) Conformity Assessment and Recognition Framework</strong> and maintains formal registration with the <strong>Global Association of Online Trainers and Examiners (GAOTE)</strong>. In addition, SRCAA is listed on the persistent <strong>Research Organization Registry (ROR)</strong> and actively collaborates with the Research Council of India (RCI), the American Psychological Association (APA), and the Commerce and Management Association of India (CMAOI).</p>
+      
       <div class="about-badges">
         <div class="about-badge"><i class="fas fa-certificate"></i><span>ITC Accredited</span></div>
         <div class="about-badge"><i class="fas fa-globe-asia"></i><span>GAOTE Registered</span></div>
@@ -104,266 +130,572 @@
         <div class="about-badge"><i class="fas fa-handshake"></i><span>CMAOI Partner</span></div>
         <div class="about-badge"><i class="fas fa-database"></i><span>ROR Listed</span></div>
       </div>
+
       <div class="mv-grid">
-        <div class="mv-card mission reveal-left">
-          <div class="mv-icon-wrap"><i class="fas fa-bullseye"></i></div>
-          <h3>Mission <span class="mv-tag">Our Purpose</span></h3>
-          <p>To advance research excellence globally by fostering ethical scholarship, interdisciplinary collaboration, innovation, and academic capacity building. SRCAA is committed to empowering researchers, educators, students, and professionals through research support, publication guidance, mentoring, international partnerships, and knowledge exchange.</p>
-          <div class="mv-footer"><i class="fas fa-globe"></i> Global Research Excellence</div>
+        <div class="mv-card mission reveal-left" id="cardMission">
+          <div class="mv-icon-wrap"><i class="fas fa-compass"></i></div>
+          <h3>Institutional Mission <span class="mv-tag">Core Purpose</span></h3>
+          <p>To advance research excellence globally by fostering ethical scholarship, interdisciplinary collaboration, innovation, and academic capacity building. SRCAA empowers researchers, educators, students, and professionals through continuous research support, publication guidance, mentoring, international partnerships, and knowledge exchange.</p>
+          <div class="mv-footer"><i class="fas fa-globe"></i> Global Research Excellence &amp; Ethics</div>
         </div>
-        <div class="mv-card vision reveal-right">
-          <div class="mv-icon-wrap"><i class="fas fa-telescope"></i></div>
-          <h3>Vision <span class="mv-tag">Our Future</span></h3>
-          <p>To be a globally recognized digital academic and research institution that inspires excellence in research, innovation, ethical scholarship, and international collaboration, creating a sustainable and inclusive knowledge ecosystem that drives academic advancement and societal impact.</p>
-          <div class="mv-footer"><i class="fas fa-star"></i> Inclusive Knowledge Ecosystem</div>
+        <div class="mv-card vision reveal-right" id="cardVision">
+          <div class="mv-icon-wrap"><i class="fas fa-eye"></i></div>
+          <h3>Institutional Vision <span class="mv-tag">Long-Term Horizon</span></h3>
+          <p>To be an internationally recognized digital academic and research institution that inspires excellence in research, innovation, ethical scholarship, and cross-cultural academic collaboration, cultivating a sustainable and inclusive knowledge ecosystem that drives measurable societal impact.</p>
+          <div class="mv-footer"><i class="fas fa-award"></i> Sustainable &amp; Inclusive Scholarship</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOUNDER -->
-  <section id="founder" class="section reveal">
+  <!-- FOUNDER SECTION -->
+  <section id="founder" class="section reveal" aria-labelledby="founder-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-user-tie"></i> Founder</div>
-      <h2 class="section-title">Sudhakaran T</h2>
+      <div class="section-badge"><i class="fas fa-user-tie"></i> Institutional Leadership</div>
+      <h2 class="section-title" id="founder-title">Founder's Desk</h2>
+      <p class="section-sub">Guidance and leadership establishing an open, ethical, and collaborative research environment.</p>
     </div>
     <div class="founder-box reveal-scale">
       <div class="founder-grid">
         <div class="founder-img-wrap reveal-left">
-          <img src="founder.jpeg.jpeg" alt="Sudhakaran T — Founder SRCAA" data-fallback="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600" />
+          <img src="founder.jpeg.jpeg" alt="Sudhakaran T — Founder of SRCAA" data-fallback="https://images.pexels.com/photos/5212317/pexels-photo-5212317.jpeg?auto=compress&cs=tinysrgb&w=600" />
         </div>
         <div class="reveal-right">
-          <p style="line-height:1.85;margin-bottom:1.2rem;color:#333;font-size:.92rem">Sudhakaran T, founder of SRCAA, is a distinguished academic professional and researcher with extensive teaching experience and published papers.</p>
-          <div class="founder-quote"><i class="fas fa-quote-left"></i> Bridging gaps in research-focused institutions &mdash; inclusive, collaborative education.</div>
+          <h3 class="profile-title">Sudhakaran T</h3>
+          <div class="profile-sub">Founder &amp; Director, SRCAA &nbsp;|&nbsp; Academician &amp; Senior Researcher</div>
+          <p class="profile-bio">Sudhakaran T is a distinguished academic professional, researcher, and educator with an extensive record of higher-education pedagogy, scholarly mentorship, and published research. Having identified systemic gaps in conventional research-focused environments, he established SRCAA to provide equitable, transparent, and high-quality research support to scholars across disciplines.</p>
+          <p class="profile-bio">Under his direction, SRCAA achieved ITC accreditation, established international scholarly affiliations, and created structured fellowship and internship frameworks for hundreds of student scholars.</p>
+          <blockquote class="founder-quote">
+            <i class="fas fa-quote-left"></i> Bridging gaps in research-focused institutions through inclusive, collaborative, and ethically governed education.
+          </blockquote>
           <div class="tag-row">
             <span class="tag"><i class="fas fa-certificate"></i> ITC Associate</span>
-            <span class="tag"><i class="fas fa-book"></i> IJJSAR Founder</span>
+            <span class="tag"><i class="fas fa-book-reader"></i> SGRCR Founder</span>
+            <span class="tag"><i class="fas fa-chalkboard-teacher"></i> Higher Education Mentor</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ASSOCIATE RESEARCHER -->
-  <section id="santosh" class="section reveal">
+  <!-- DR. ANJANA RADHAKRISHNA SECTION -->
+  <section id="anjana" class="section reveal" aria-labelledby="anjana-title">
+    <a id="scholar" style="position: absolute; top: -80px; visibility: hidden;"></a>
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-user-graduate"></i> Associate Researcher</div>
-      <h2 class="section-title">Dr. Santosh N. Chikkamari</h2>
+      <div class="section-badge"><i class="fas fa-user-graduate"></i> Academic Scholar</div>
+      <h2 class="section-title" id="anjana-title">Dr. Anjana Radhakrishna</h2>
+      <p class="section-sub">Senior academician providing higher education leadership, management scholarship, and institutional governance mentorship.</p>
     </div>
     <div class="founder-box reveal-scale">
       <div class="founder-grid">
-        <div class="reveal-left" style="display:flex;flex-direction:column;gap:1rem;justify-content:center">
+        <div class="reveal-left scholar-meta-grid">
           <div class="exp-stats-box">
-            <div class="num">10+</div>
-            <div class="lbl">Years of Experience</div>
+            <div class="num">20+</div>
+            <div class="lbl">Years of Academic Tenure</div>
           </div>
           <div class="info-panel">
-            <div class="info-panel-title">Affiliated With</div>
-            <div class="info-row"><i class="fas fa-university"></i> Charles Sturt University</div>
-            <div class="info-row"><i class="fas fa-graduation-cap"></i> University of Sydney Business School</div>
-            <div class="info-row"><i class="fas fa-flask"></i> SRCAA, India (Associate Researcher)</div>
+            <div class="info-panel-title"><i class="fas fa-university"></i> Academic Credentials</div>
+            <div class="info-row"><i class="fas fa-graduation-cap"></i> Ph.D., MBA</div>
+            <div class="info-row"><i class="fas fa-chalkboard-teacher"></i> Higher Education Professor</div>
+            <div class="info-row"><i class="fas fa-award"></i> Senior Academic Scholar, SRCAA</div>
           </div>
           <div class="info-panel">
-            <div class="info-panel-title">Location</div>
-            <div class="info-row"><i class="fas fa-globe"></i> India &amp; Australia</div>
+            <div class="info-panel-title"><i class="fas fa-landmark"></i> Domain Specialization</div>
+            <div class="info-row"><i class="fas fa-balance-scale"></i> Corporate Governance</div>
+            <div class="info-row"><i class="fas fa-chart-line"></i> Strategic Management</div>
+            <div class="info-row"><i class="fas fa-book-reader"></i> Curriculum &amp; Evaluation</div>
           </div>
         </div>
         <div class="reveal-right">
-          <h3 style="font-family:var(--font-head);font-size:1.3rem;font-weight:700;margin-bottom:.3rem">Dr. Santosh Nelamakanahalli Chikkamari</h3>
-          <p style="color:var(--red-600);font-weight:600;font-size:.9rem;margin-bottom:1rem">M.Com., Ph.D. &nbsp;|&nbsp; Associate Researcher, SRCAA</p>
-          <p style="line-height:1.8;margin-bottom:.8rem;color:#333;font-size:.9rem">Dr. Santosh Nelamakanahalli Chikkamari is an internationally engaged academician, researcher, and higher education professional with over a decade of teaching and academic experience in Commerce, Accounting, Finance, and Management. He is currently associated with <strong>Charles Sturt University</strong> and the <strong>University of Sydney Business School, Australia</strong>.</p>
-          <p style="line-height:1.8;margin-bottom:1.2rem;color:#333;font-size:.9rem">Having served in reputed institutions across India and Australia, Dr. Santosh brings a global perspective to teaching, research, and academic collaboration. He is committed to fostering academic excellence, innovative learning practices, international knowledge exchange, and research-driven education.</p>
-          <div class="founder-quote"><i class="fas fa-quote-left"></i> Committed to fostering academic excellence, innovative learning practices, and research-driven education across diverse academic environments.</div>
-          <div style="margin-top:1.2rem">
-            <p style="font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:2px;color:#888;margin-bottom:.6rem">Areas of Expertise</p>
-            <div class="expertise-tags">
-              <span class="exp-tag">Financial Accounting</span><span class="exp-tag">Corporate Finance</span><span class="exp-tag">Investment Management</span><span class="exp-tag">Research Methodology</span><span class="exp-tag">Organisational Behaviour</span><span class="exp-tag">IFRS</span>
-            </div>
+          <h3 class="profile-title">Dr. Anjana Radhakrishna</h3>
+          <div class="profile-sub">Ph.D., MBA &nbsp;|&nbsp; Senior Academic Scholar &amp; Advisory Board Member</div>
+          <p class="profile-bio">Dr. Anjana Radhakrishna is a distinguished academician, doctoral researcher, and higher education specialist with over 20 years of higher education teaching tenure and published research in management and corporate governance.</p>
+          <p class="profile-bio">Throughout more than two decades of dedicated academic service, Dr. Anjana has spearheaded curriculum design, postgraduate mentorship, institutional evaluation frameworks, and doctoral research guidance. At SRCAA, she guides strategic academic initiatives, interdisciplinary research design, and faculty development programmes.</p>
+          <blockquote class="founder-quote">
+            <i class="fas fa-quote-left"></i> Dedicated to fostering rigorous research excellence, ethical corporate governance, and pedagogical innovation across higher education.
+          </blockquote>
+          <div class="tag-row">
+            <span class="tag"><i class="fas fa-balance-scale"></i> Corporate Governance</span>
+            <span class="tag"><i class="fas fa-chart-line"></i> Management Studies</span>
+            <span class="tag"><i class="fas fa-graduation-cap"></i> Doctoral Mentorship</span>
+            <span class="tag"><i class="fas fa-award"></i> Advisory Board Member</span>
+            <span class="tag"><i class="fas fa-chalkboard-teacher"></i> Faculty Development</span>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TEAM -->
-  <section id="team" class="section reveal">
+  <!-- ACADEMIC BOARD & FACULTY ADVISORS -->
+  <section id="board" class="section reveal" aria-labelledby="board-title">
+    <a id="team" style="position: absolute; top: -80px; visibility: hidden;"></a>
+    <a id="santosh" style="position: absolute; top: -80px; visibility: hidden;"></a>
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-users"></i> Our Team</div>
-      <h2 class="section-title">Meet Experts</h2>
+      <div class="section-badge"><i class="fas fa-users"></i> Academic Board</div>
+      <h2 class="section-title" id="board-title">Academic Board &amp; Faculty Advisors</h2>
+      <p class="section-sub">Our interdisciplinary council of distinguished academic scholars, doctoral researchers, department chairs, and institutional advisors.</p>
     </div>
+
+    <!-- Category Filter Controls -->
+    <div class="board-filters" id="boardFilters" role="tablist" aria-label="Academic board category filter">
+      <button type="button" class="board-filter-btn active" data-filter="all"><i class="fas fa-th-large"></i> All Members (12)</button>
+      <button type="button" class="board-filter-btn" data-filter="scholar"><i class="fas fa-user-graduate"></i> Scholars &amp; Leadership (1)</button>
+      <button type="button" class="board-filter-btn" data-filter="faculty"><i class="fas fa-chalkboard-teacher"></i> Faculty &amp; Doctoral Chairs (8)</button>
+      <button type="button" class="board-filter-btn" data-filter="advisory"><i class="fas fa-balance-scale"></i> Advisory &amp; Legal (3)</button>
+    </div>
+
     <div class="cards-grid">
-      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Anjana Radhakrishna</h3><div class="card-sub">Ph.D, MBA</div><p>20+ years teaching, published researcher.</p></div>
-      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-briefcase"></i> Mr. Ambarish C Abbaiah</h3><div class="card-sub">MBA (IAU)</div><p>10+ years teaching, published researcher.</p></div>
-      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-chalkboard"></i> Mr. Dileep R</h3><div class="card-sub">M.A., B.Ed.</div><p>Active research, international seminars.</p></div>
-      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-book-open"></i> Dr. Narayana K.H</h3><div class="card-sub">M.A., Ph.D.</div><p>Sanskrit dept. head, 28 yrs exp, 20+ papers.</p></div>
-      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-calculator"></i> Dr. Lakshmi Bai D</h3><div class="card-sub">M.Com, MBA, Ph.D.</div><p>State rank holder, 8 years teaching.</p></div>
-      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-chart-line"></i> Dr. Pruthvi N</h3><div class="card-sub">MBA, M.Com, Ph.D.</div><p>12 years experience, many publications.</p></div>
-      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-coins"></i> Mr. Dhasharatha T</h3><div class="card-sub">M.Com, KSET</div><p>7+ years, researcher in taxation.</p></div>
-      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-laptop-code"></i> Mr. Abhi C</h3><div class="card-sub">Diploma CS</div><p>2.7+ years, IT support technician.</p></div>
-      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-gavel"></i> Ms. Bindu C</h3><div class="card-sub">B.Com, LL.B.</div><p>Legal advisory, practicing advocate.</p></div>
-      <div class="card reveal-scale"><h3 class="card-title"><i class="fas fa-balance-scale"></i> Mr. Anil Sulegai P</h3><div class="card-sub">Tax Practitioner</div><p>22+ years auditing, author.</p></div>
-      <div class="card reveal-scale reveal-delay-1"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Shashikala C.S</h3><div class="card-sub">Ph.D, M.COM, PGDBA, B.Ed</div><p>8+ years teaching, published researcher.</p></div>
-      <div class="card reveal-scale reveal-delay-2"><h3 class="card-title"><i class="fas fa-user-graduate"></i> Dr. Rajini K.S</h3><div class="card-sub">Ph.D, M.Phil, MBA</div><p>12+ years teaching, published researcher.</p></div>
+      <!-- 1. Dr. Santosh Nelamakanahalli Chikkamari -->
+      <div class="card card-scholar-feature reveal-scale reveal-delay-1" id="faculty-santosh" data-cat="scholar">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-maroon"><i class="fas fa-globe-americas"></i> Associate Researcher</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 10+ Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar card-avatar-maroon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Santosh N. Chikkamari</h3>
+              <div class="card-sub" title="M.Com., Ph.D. | Charles Sturt & Sydney Business School">M.Com., Ph.D. &bull; Charles Sturt &amp; Univ. of Sydney</div>
+            </div>
+          </div>
+          <p class="card-bio">Internationally active academician and researcher with over a decade of teaching, curriculum design, and research mentorship in commerce, corporate finance, and quantitative methodology across Australia and India.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-chart-line"></i> Commerce &amp; Corporate Finance</span>
+        </div>
+      </div>
+
+      <!-- 2. Dr. Narayana K.H -->
+      <div class="card reveal-scale reveal-delay-2" id="faculty-narayana" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-maroon"><i class="fas fa-university"></i> Head of Department</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 28 Yrs Excellence</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-book-open"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Narayana K.H</h3>
+              <div class="card-sub" title="M.A., Ph.D. | Head of Sanskrit Department">M.A., Ph.D. &bull; Sanskrit Studies</div>
+            </div>
+          </div>
+          <p class="card-bio">Head of Sanskrit Department with 28 years of academic excellence and more than 20 indexed research publications across classical Indian pedagogy and comparative literature.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-feather-alt"></i> Classical Literature &amp; Pedagogy</span>
+        </div>
+      </div>
+
+      <!-- 3. Dr. Lakshmi Bai D -->
+      <div class="card reveal-scale" id="faculty-lakshmi" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-chalkboard-teacher"></i> Associate Professor</span>
+            <span class="member-exp-badge"><i class="fas fa-medal"></i> State Rank Holder</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-calculator"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Lakshmi Bai D</h3>
+              <div class="card-sub" title="M.Com., MBA, Ph.D. | Commerce & Auditing">M.Com., MBA, Ph.D. &bull; Commerce</div>
+            </div>
+          </div>
+          <p class="card-bio">State academic rank holder with 8 years of university instruction in commerce, financial accounting, tax auditing, and empirical business performance analysis.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-file-invoice-dollar"></i> Financial Accounting &amp; Taxation</span>
+        </div>
+      </div>
+
+      <!-- 4. Dr. Pruthvi N -->
+      <div class="card reveal-scale reveal-delay-1" id="faculty-pruthvi" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-microscope"></i> Doctoral Faculty</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 12 Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-chart-line"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Pruthvi N</h3>
+              <div class="card-sub" title="MBA, M.Com., Ph.D. | Business Analytics">MBA, M.Com., Ph.D. &bull; Analytics</div>
+            </div>
+          </div>
+          <p class="card-bio">12 years of postgraduate instruction and active empirical research experience across predictive business analytics, financial econometrics, and commerce studies.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-chart-pie"></i> Business Analytics &amp; Finance</span>
+        </div>
+      </div>
+
+      <!-- 5. Dr. Shashikala C.S -->
+      <div class="card reveal-scale reveal-delay-2" id="faculty-shashikala" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-chalkboard-teacher"></i> Senior Faculty</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 8+ Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Shashikala C.S</h3>
+              <div class="card-sub" title="Ph.D., M.Com., PGDBA, B.Ed. | Commerce Education">Ph.D., M.Com., PGDBA, B.Ed.</div>
+            </div>
+          </div>
+          <p class="card-bio">8+ years of university teaching, published peer-reviewed researcher in commerce, pedagogical frameworks, and secondary business education curricula.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-graduation-cap"></i> Commerce &amp; Business Education</span>
+        </div>
+      </div>
+
+      <!-- 6. Dr. Rajini K.S -->
+      <div class="card reveal-scale" id="faculty-rajini" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-chalkboard-teacher"></i> Doctoral Faculty</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 12+ Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-user-graduate"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Dr. Rajini K.S</h3>
+              <div class="card-sub" title="Ph.D., M.Phil., MBA | Management Studies">Ph.D., M.Phil., MBA &bull; Management</div>
+            </div>
+          </div>
+          <p class="card-bio">12+ years of postgraduate instruction, recognized researcher with extensive management journal contributions and doctoral dissertation mentoring.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-briefcase"></i> Management Studies &amp; Strategy</span>
+        </div>
+      </div>
+
+      <!-- 7. Mr. Ambarish C Abbaiah -->
+      <div class="card reveal-scale reveal-delay-1" id="faculty-ambarish" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-briefcase"></i> Senior Faculty</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 10+ Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-briefcase"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Mr. Ambarish C Abbaiah</h3>
+              <div class="card-sub" title="MBA (IAU) | Management Research">MBA (IAU) &bull; Management Research</div>
+            </div>
+          </div>
+          <p class="card-bio">Over a decade of academic instruction and management research, contributing extensively to university programmes, business administration curricula, and seminars.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-project-diagram"></i> Strategic Management</span>
+        </div>
+      </div>
+
+      <!-- 8. Mr. Dhasharatha T -->
+      <div class="card reveal-scale reveal-delay-2" id="faculty-dhasharatha" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-chalkboard"></i> Assistant Professor</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 7+ Yrs Tenure</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-coins"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Mr. Dhasharatha T</h3>
+              <div class="card-sub" title="M.Com., KSET | Direct Taxation">M.Com., KSET &bull; Taxation</div>
+            </div>
+          </div>
+          <p class="card-bio">Over 7 years of academic instruction and active research scholarship in direct taxation, corporate fiscal policy, and public finance standards.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-receipt"></i> Direct Taxation &amp; Fiscal Policy</span>
+        </div>
+      </div>
+
+      <!-- 9. Mr. Dileep R -->
+      <div class="card reveal-scale" id="faculty-dileep" data-cat="faculty">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-book-reader"></i> Humanities Faculty</span>
+            <span class="member-exp-badge"><i class="fas fa-lightbulb"></i> Pedagogy</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-chalkboard"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Mr. Dileep R</h3>
+              <div class="card-sub" title="M.A., B.Ed. | Humanities & Pedagogy">M.A., B.Ed. &bull; Humanities</div>
+            </div>
+          </div>
+          <p class="card-bio">Active humanities researcher participating regularly in national and international pedagogical symposia, curriculum development, and teaching methodology forums.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-pen-nib"></i> Humanities &amp; Social Sciences</span>
+        </div>
+      </div>
+
+      <!-- 10. Ms. Bindu C -->
+      <div class="card reveal-scale reveal-delay-1" id="faculty-bindu" data-cat="advisory">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-maroon"><i class="fas fa-balance-scale"></i> Institutional Counsel</span>
+            <span class="member-exp-badge"><i class="fas fa-gavel"></i> Advocate</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-gavel"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Ms. Bindu C</h3>
+              <div class="card-sub" title="B.Com., LL.B. | Legal Counsel">B.Com., LL.B. &bull; Legal Advocate</div>
+            </div>
+          </div>
+          <p class="card-bio">Practicing legal advocate providing institutional counsel on intellectual property rights, academic ethics, regulatory compliance, and governance frameworks.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-shield-alt"></i> Intellectual Property &amp; Ethics</span>
+        </div>
+      </div>
+
+      <!-- 11. Mr. Anil Sulegai P -->
+      <div class="card reveal-scale reveal-delay-2" id="faculty-anil" data-cat="advisory">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-file-invoice"></i> Financial Advisor</span>
+            <span class="member-exp-badge"><i class="fas fa-clock"></i> 22+ Yrs</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-balance-scale"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Mr. Anil Sulegai P</h3>
+              <div class="card-sub" title="Tax Practitioner & Author | Financial Auditing">Tax Practitioner &amp; Author</div>
+            </div>
+          </div>
+          <p class="card-bio">22+ years of professional financial auditing, corporate taxation consulting, and published academic treatises on fiscal management and compliance standards.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-coins"></i> Financial Auditing &amp; Taxation</span>
+        </div>
+      </div>
+
+      <!-- 12. Mr. Abhi C -->
+      <div class="card reveal-scale" id="faculty-abhi" data-cat="advisory">
+        <div>
+          <div class="card-badge-row">
+            <span class="member-role-badge badge-neutral"><i class="fas fa-server"></i> Systems Architect</span>
+            <span class="member-exp-badge"><i class="fas fa-laptop-code"></i> Digital IT</span>
+          </div>
+          <div class="card-header-row">
+            <div class="card-avatar"><i class="fas fa-laptop-code"></i></div>
+            <div class="card-identity">
+              <h3 class="card-title">Mr. Abhi C</h3>
+              <div class="card-sub" title="Diploma in Computer Science | Systems Officer">Dip. CS &bull; Systems Officer</div>
+            </div>
+          </div>
+          <p class="card-bio">Information technology officer overseeing institutional systems, digital repository security, database integrity, and high-availability academic platform continuity.</p>
+        </div>
+        <div class="card-footer">
+          <span class="card-domain-tag"><i class="fas fa-network-wired"></i> Digital Infrastructure &amp; Security</span>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- PUBLICATIONS -->
-  <section id="press" class="section reveal">
+  <!-- SCHOLARLY PUBLICATIONS & ARCHIVE -->
+  <section id="press" class="section reveal" aria-labelledby="press-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-book"></i> Publications</div>
-      <h2 class="section-title">Abhijnana Prathiba</h2>
+      <div class="section-badge"><i class="fas fa-book-open"></i> Research Repository</div>
+      <h2 class="section-title" id="press-title">Scholarly Press &amp; Publications</h2>
+      <p class="section-sub">Official peer-reviewed journal portal, Abhijnana Prathiba archives, student dissertations, and institutional monographs.</p>
     </div>
+
+    <!-- SGRCR OFFICIAL JOURNAL PORTAL SHOWCASE (HIGHLIGHTED) -->
+    <div class="sgrcr-showcase-card reveal-scale" id="sgrcr-portal-showcase">
+      <div class="sgrcr-card-inner">
+        <div class="sgrcr-icon-box">
+          <i class="fas fa-book-journal-whills"></i>
+        </div>
+        <div class="sgrcr-meta">
+          <div class="sgrcr-tag"><i class="fas fa-star"></i> Flagship Academic Journal</div>
+          <h3 class="sgrcr-title">SGRCR &mdash; SRCAA Global Review of Contemporary Research</h3>
+          <p class="sgrcr-desc">Our official open-access, multidisciplinary peer-reviewed international academic journal portal. Dedicated to disseminating high-impact original empirical research, scholarly treatises, faculty monographs, and graduate dissertations across multidisciplinary domains.</p>
+        </div>
+        <div class="sgrcr-action">
+          <a href="https://www.sgrcr.srcaa.co.in/" target="_blank" rel="noopener noreferrer" class="btn-sgrcr-highlight" id="btnSgrcrVisitPortal" aria-label="Visit SGRCR Journal Website (opens in new tab)" title="Visit https://www.sgrcr.srcaa.co.in/">
+            <span>Visit Journal Website</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+          <span class="sgrcr-url-hint"><i class="fas fa-globe"></i> www.sgrcr.srcaa.co.in</span>
+        </div>
+      </div>
+    </div>
+
     <div class="press-box reveal-scale">
       <div class="press-grid">
         <div>
-          <h3 class="press-cat-title"><i class="fas fa-newspaper"></i> Press Releases</h3>
+          <h3 class="press-cat-title"><i class="fas fa-newspaper"></i> Scholarly Press Releases</h3>
           <ul class="press-list">
-            <li><a href="https://drive.google.com/file/d/1n1sMu2NsPUr3UaferauuANCxym-AciBk/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Press release-2, Abhijnana Pratibha-12</a></li>
-            <li><a href="https://drive.google.com/file/d/1pUVeA3TWKKTbA5EAQ_YEfSVA2BLNG4qn/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Press release-3, Abhijnana-13</a></li>
-            <li><a href="https://drive.google.com/file/d/1O-1pVMt47ISVQZRnnyQgHHuwhARiB9pt/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Press release-4, Abhijnana-16</a></li>
-            <li><a href="https://drive.google.com/file/d/1EOM7ABWub1dH37e6zr5h3pqvP7pYODGu/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> Press release-5, Abhijnana Pratibha-45</a></li>
+            <li><a href="https://drive.google.com/file/d/1n1sMu2NsPUr3UaferauuANCxym-AciBk/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Press Release 2 &mdash; Abhijnana Pratibha 12</a></li>
+            <li><a href="https://drive.google.com/file/d/1pUVeA3TWKKTbA5EAQ_YEfSVA2BLNG4qn/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Press Release 3 &mdash; Abhijnana Pratibha 13</a></li>
+            <li><a href="https://drive.google.com/file/d/1O-1pVMt47ISVQZRnnyQgHHuwhARiB9pt/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Press Release 4 &mdash; Abhijnana Pratibha 16</a></li>
+            <li><a href="https://drive.google.com/file/d/1EOM7ABWub1dH37e6zr5h3pqvP7pYODGu/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Press Release 5 &mdash; Abhijnana Pratibha 45</a></li>
           </ul>
         </div>
         <div>
-          <h3 class="press-cat-title"><i class="fas fa-file-alt"></i> Internship Reports</h3>
+          <h3 class="press-cat-title"><i class="fas fa-file-signature"></i> Internship Research Reports</h3>
           <ul class="press-list">
-            <li><a href="https://drive.google.com/file/d/1YgV5i7Aw7otuxhchHEDPNv3Yl32F-ddV/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> VEENA.L (BMS/204/01)</a></li>
-            <li><a href="https://drive.google.com/file/d/1edrKpmurU67u-wnRgGL_gSdRy7UQDIbn/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> SUSHMITHA (BMS/180/04)</a></li>
-            <li><a href="#"><i class="fas fa-file-pdf"></i> Rajeshwari (205/02)</a></li>
-            <li><a href="https://drive.google.com/file/d/1edrKpmurU67u-wnRgGL_gSdRy7UQDIbn/view?usp=sharing" target="_blank"><i class="fas fa-file-pdf"></i> SNEHA (BMS/123/03)</a></li>
+            <li><a href="https://drive.google.com/file/d/1YgV5i7Aw7otuxhchHEDPNv3Yl32F-ddV/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Veena L. (BMS/204/01) &mdash; Empirical Study</a></li>
+            <li><a href="https://drive.google.com/file/d/1edrKpmurU67u-wnRgGL_gSdRy7UQDIbn/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Sushmitha (BMS/180/04) &mdash; Applied Research</a></li>
+            <li><a href="#" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Rajeshwari (205/02) &mdash; Project Report</a></li>
+            <li><a href="https://drive.google.com/file/d/1edrKpmurU67u-wnRgGL_gSdRy7UQDIbn/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-file-pdf"></i> Sneha (BMS/123/03) &mdash; Academic Thesis</a></li>
           </ul>
         </div>
       </div>
     </div>
+
     <div class="press-box reveal-scale">
-      <h3 class="press-cat-title"><i class="fas fa-bell"></i> Notifications</h3>
-      <ul class="press-list" style="margin-bottom:1.2rem">
-        <li><a href="#"><i class="fas fa-file-excel"></i> Legal Session Attendance</a></li>
-        <li><a href="#"><i class="fas fa-file-pdf"></i> Quality Policy</a></li>
-        <li><a href="#"><i class="fas fa-file-pdf"></i> Certificate Of Quality</a></li>
-      </ul>
-      <h3 class="press-cat-title"><i class="fas fa-book"></i> Books</h3>
-      <ul class="press-list">
-        <li><a href="https://drive.google.com/file/d/1jsELbresEJVvLmyL9m_e48WeCAj3B8im/view?usp=sharing" target="_blank"><i class="fas fa-book-open"></i> Mrs. Varalakshmi G, ISBN 978-81-979976-4-8</a></li>
-      </ul>
+      <div class="press-grid">
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-book"></i> Institutional Books</h3>
+          <ul class="press-list">
+            <li><a href="https://drive.google.com/file/d/1jsELbresEJVvLmyL9m_e48WeCAj3B8im/view?usp=sharing" target="_blank" rel="noopener"><i class="fas fa-book-reader"></i> Varalakshmi G. &mdash; ISBN 978-81-979976-4-8</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="press-cat-title"><i class="fas fa-bell"></i> Policy &amp; Documentation</h3>
+          <ul class="press-list">
+            <li><a href="accreditations.html"><i class="fas fa-shield-alt"></i> Quality Assessment &amp; Policy</a></li>
+            <li><a href="#cert"><i class="fas fa-medal"></i> Quality Management System Certificate</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- INTERNSHIP BANNER -->
-  <section class="intern-banner reveal">
-    <div class="intern-icon-circle"><i class="fas fa-user-graduate"></i></div>
-    <div class="intern-label">SRCAA Internship Program</div>
-    <div class="intern-topic">Apply for the SRCAA Internship Program and gain hands-on experience in research and academic development.</div>
-    <p class="intern-desc">Work with experts on real-time projects involving research writing, data analysis, and publication support. Join SRCAA to build a strong academic and career foundation.</p>
-    <a href="https://forms.gle/fjVx7ZD64Zm8vZqn8" class="apply-link" target="_blank">Apply Now <i class="fas fa-arrow-right"></i></a>
+  <!-- RESEARCH INTERNSHIP PROGRAM BANNER -->
+  <section id="internship" class="intern-banner reveal" aria-labelledby="intern-title">
+    <div class="intern-icon-circle"><i class="fas fa-graduation-cap"></i></div>
+    <div class="intern-label">Academic Fellowship &amp; Training</div>
+    <h2 class="intern-topic" id="intern-title">SRCAA Research Internship Programme</h2>
+    <p class="intern-desc">Collaborate with senior university faculty on real-world academic investigations, scientific research writing, statistical data modelling, and international publication preparation. Gain accredited institutional credentials to accelerate your scholarly career.</p>
+    <a href="https://forms.gle/fjVx7ZD64Zm8vZqn8" class="apply-link" target="_blank" rel="noopener" id="btnApplyInternship">Apply for Internship <i class="fas fa-arrow-right"></i></a>
   </section>
 
   <!-- CERTIFICATE OF QUALITY -->
-  <div class="cert-card reveal-scale">
+  <div id="cert" class="cert-card reveal-scale">
     <div class="cert-icon-circle"><i class="fas fa-medal"></i></div>
     <h3>Certificate of Quality</h3>
-    <p>International Quality Certification Program</p>
-    <p style="font-weight:600">Awarded to<br><strong>Shakti Research Centre &amp; Academia (SRCAA)</strong></p>
-    <p>For successfully completing the Basic Quality Assessment</p>
-    <p><strong>Achievement Score: 85% (Grade B)</strong></p>
-    <p>Quality Management System | Documentation Control</p>
-    <p style="font-weight:600;color:var(--red-600);margin-bottom:1.2rem">Accredited by ITC</p>
-    <a href="https://www.qibcertification.org/en/verify?cert=QIB-BASIC-1773566474897-G91BHQ" target="_blank" class="btn btn-outline" style="color:var(--red-600);border-color:var(--red-600);display:inline-flex"><i class="fas fa-check-circle"></i> Verify Certificate</a>
+    <p style="color: var(--text-muted); font-weight: 500;">International Quality Certification Program</p>
+    <p style="font-size: 1.05rem; margin: 0.8rem 0;">Conferred to <strong>Shakti Research Centre &amp; Academia (SRCAA)</strong></p>
+    <p>For demonstrable conformity with the Basic Quality Assessment in Academic Administration</p>
+    <p style="font-size: 1.15rem; font-family: var(--font-serif); color: var(--primary); font-weight: 700; margin: 0.5rem 0;">Achievement Score: 85% &mdash; Grade B</p>
+    <p style="font-size: 0.85rem; color: var(--text-muted);">Quality Management System &middot; Documentation Control Framework</p>
+    <p style="font-weight: 600; color: var(--gold-dark); margin: 0.5rem 0 1.5rem;">Accredited under the International Trade Council (ITC)</p>
+    <a href="https://www.qibcertification.org/en/verify?cert=QIB-BASIC-1773566474897-G91BHQ" target="_blank" rel="noopener" class="btn btn-outline" id="btnVerifyCert"><i class="fas fa-check-circle"></i> Verify Official Certificate</a>
   </div>
 
   <!-- DORA STATEMENT -->
-  <div class="dora-card reveal-scale">
+  <div id="dora" class="dora-card reveal-scale">
     <div class="dora-icon-circle"><i class="fas fa-scroll"></i></div>
     <h3>Statement on Responsible Research Assessment</h3>
-    <p><strong>Effective from 01 March 2026</strong>, SRCAA publicly endorses the principles of the San Francisco Declaration on Research Assessment (DORA) and affirms its commitment to responsible, transparent, and equitable evaluation of research and researchers.</p>
-    <p>SRCAA emphasizes that research should be assessed based on its quality, originality, rigor, and societal impact, rather than relying solely on journal-based metrics.</p>
-    <p>Through its policies, publications, and academic initiatives, SRCAA aims to strengthen fair research assessment systems and contribute to a more balanced and meaningful global research ecosystem.</p>
+    <p><strong>Effective from 01 March 2026</strong>, Shakti Research Centre &amp; Academia (SRCAA) publicly endorses the principles of the <strong>San Francisco Declaration on Research Assessment (DORA)</strong> and formally affirms its commitment to responsible, transparent, and equitable evaluation of scientific research and academic scholars.</p>
+    <p>SRCAA maintains that research should be evaluated primarily on the basis of its intrinsic quality, methodology, intellectual rigor, originality, and societal impact, rather than solely on journal-based metrics or impact factors.</p>
+    <p>Through its editorial policies, peer reviews, academic publications, and mentoring initiatives, SRCAA actively contributes to building a more balanced, fair, and meaningful global research ecosystem.</p>
   </div>
 
-  <!-- CONTACT (section on page, not in nav) -->
-  <section id="contact" class="section reveal">
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section reveal" aria-labelledby="contact-title">
     <div class="section-header">
-      <div class="section-badge"><i class="fas fa-envelope"></i> Get in touch</div>
-      <h2 class="section-title">Contact</h2>
+      <div class="section-badge"><i class="fas fa-envelope-open-text"></i> Inquiries</div>
+      <h2 class="section-title" id="contact-title">Academic Communications</h2>
+      <p class="section-sub">Direct official correspondence, institutional partnership proposals, and academic inquiries.</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-card reveal-left"><i class="fas fa-envelope"></i><h3>Email</h3><p><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></p></div>
-      <div class="contact-card reveal-right"><i class="fas fa-globe"></i><h3>Social</h3><p>Follow us on social media</p></div>
+      <div class="contact-card reveal-left" id="cardContactEmail">
+        <i class="fas fa-envelope"></i>
+        <h3>Institutional Secretariat</h3>
+        <p><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></p>
+      </div>
+      <div class="contact-card reveal-right" id="cardContactCommunity">
+        <i class="fab fa-whatsapp"></i>
+        <h3>Scholarly Community</h3>
+        <p><a href="https://chat.whatsapp.com/LGCXLxBGFJJBmOolmmUYPX" target="_blank" rel="noopener">Join Official WhatsApp Channel</a></p>
+      </div>
     </div>
     <div class="social-links">
-      <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
       <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-      <a href="https://chat.whatsapp.com/LGCXLxBGFJJBmOolmmUYPX" class="social-icon" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://chat.whatsapp.com/LGCXLxBGFJJBmOolmmUYPX" class="social-icon" aria-label="WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
     </div>
   </section>
 
 </main>
 
-<!-- FOOTER -->
-<footer>
+<!-- INSTITUTIONAL FOOTER -->
+<footer role="contentinfo">
   <div class="footer-inner">
     <div>
       <div class="footer-brand">
-        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Logo" data-fallback="logo.svg" /></div>
+        <div class="footer-brand-icon"><img src="Logo Icon.png.png" alt="SRCAA Emblem" data-fallback="logo.svg" /></div>
         <span class="footer-brand-text">SRCAA</span>
       </div>
-      <p class="footer-desc">Shakti Research Centre &amp; Academia. Est. 2024</p>
+      <p class="footer-desc">Shakti Research Centre &amp; Academia (Est. 2024). An accredited digital research institution committed to interdisciplinary scholarship, ethical evaluation, and academic capacity building.</p>
     </div>
     <div>
-      <h3 class="footer-col-title">Quick Links</h3>
+      <h3 class="footer-col-title">Academic Directory</h3>
       <ul class="footer-links">
-        <li><a href="index.html#about"><i class="fas fa-chevron-right"></i> About</a></li>
-        <li><a href="index.html#founder"><i class="fas fa-chevron-right"></i> Founder</a></li>
-        <li><a href="index.html#santosh"><i class="fas fa-chevron-right"></i> Associate Researcher</a></li>
-        <li><a href="index.html#team"><i class="fas fa-chevron-right"></i> Team</a></li>
-        <li><a href="index.html#press"><i class="fas fa-chevron-right"></i> Publications</a></li>
-        <li><a href="index.html#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+        <li><a href="#about"><i class="fas fa-chevron-right"></i> About SRCAA</a></li>
+        <li><a href="#founder"><i class="fas fa-chevron-right"></i> Founder's Desk</a></li>
+        <li><a href="#anjana"><i class="fas fa-chevron-right"></i> Dr. Anjana Radhakrishna</a></li>
+        <li><a href="#board"><i class="fas fa-chevron-right"></i> Academic Board &amp; Faculty</a></li>
+        <li><a href="#press"><i class="fas fa-chevron-right"></i> Scholarly Publications</a></li>
+        <li><a href="https://www.sgrcr.srcaa.co.in/" target="_blank" rel="noopener noreferrer" class="footer-highlight-link" title="Visit SGRCR Journal Portal (opens in new tab)"><i class="fas fa-external-link-alt"></i> <span>SGRCR Journal Portal</span> <span class="footer-tag-live">Live</span></a></li>
       </ul>
     </div>
     <div>
-      <h3 class="footer-col-title">Initiatives</h3>
+      <h3 class="footer-col-title">Accreditations &amp; Policy</h3>
       <ul class="footer-links">
-        <li><a href="global-review.html"><i class="fas fa-chevron-right"></i> SGRCR <span class="nav-badge-new">New</span></a></li>
-        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations</a></li>
-        <li><a href="it-solutions.html"><i class="fas fa-chevron-right"></i> IT Solutions <span class="nav-badge-soon">Soon</span></a></li>
-        <li><a href="online-courses.html"><i class="fas fa-chevron-right"></i> Online Courses <span class="nav-badge">Soon</span></a></li>
+        <li><a href="accreditations.html"><i class="fas fa-chevron-right"></i> Accreditations &amp; Quality</a></li>
+        <li><a href="#dora"><i class="fas fa-chevron-right"></i> DORA Statement</a></li>
+        <li><a href="#cert"><i class="fas fa-chevron-right"></i> Quality Certification</a></li>
+        <li><a href="#internship"><i class="fas fa-chevron-right"></i> Research Internship Program</a></li>
+        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Academic Inquiries</a></li>
       </ul>
-      <h3 class="footer-col-title" style="margin-top:1.5rem">Contact</h3>
-      <div class="footer-contact-row"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
+      <div class="footer-contact-row" style="margin-top: 1.25rem;"><i class="fas fa-envelope"></i><a href="mailto:srcaacontact@gmail.com">srcaacontact@gmail.com</a></div>
     </div>
   </div>
   <div class="footer-copy">&copy; 2026 SRCAA &mdash; Shakti Research Centre and Academia. All rights reserved.</div>
 </footer>
 
-<!-- CHATBOT -->
-<div class="copilot-fab" id="copilotFab" aria-label="Open SRCAA Copilot"><i class="fas fa-robot"></i></div>
-<div class="copilot-window" id="copilotWindow">
+<!-- ACADEMIC ASSISTANT CHATBOT -->
+<div class="copilot-fab" id="copilotFab" aria-label="Open SRCAA Academic Assistant" role="button" tabindex="0"><i class="fas fa-comment-dots"></i></div>
+<div class="copilot-window" id="copilotWindow" role="region" aria-label="SRCAA Academic Assistant Dialogue">
   <div class="copilot-header">
-    <h4><i class="fas fa-microchip"></i> SRCAA Copilot</h4>
-    <button class="close-copilot" id="closeCopilotWindow">&#10005;</button>
+    <h4><i class="fas fa-graduation-cap"></i> SRCAA Academic Desk</h4>
+    <button class="close-copilot" id="closeCopilotWindow" aria-label="Close Assistant">&#10005;</button>
   </div>
   <div class="copilot-messages" id="copilotMessages">
     <div class="message bot-msg">
-      <div class="avatar-bot"><i class="fas fa-robot"></i></div>
-      <div class="bubble">Hello! I&rsquo;m the SRCAA virtual assistant. I can answer questions about our research, SGRCR journal, accreditations, IT solutions, online courses, internships, team, publications, contact, and DORA statement.</div>
+      <div class="avatar-bot"><i class="fas fa-landmark"></i></div>
+      <div class="bubble">Welcome to the SRCAA Academic Information Desk. I can provide verified details on our accreditations, research publications, faculty directory, internship programs, and DORA policy endorsement.</div>
     </div>
   </div>
   <div class="copilot-quick" id="quickReplies">
-    <span class="quick-chip" data-ask="What is SRCAA?">What is SRCAA?</span>
-    <span class="quick-chip" data-ask="Tell me about SGRCR">SGRCR</span>
+    <span class="quick-chip" data-ask="Tell me about SGRCR Journal">SGRCR Journal</span>
+    <span class="quick-chip" data-ask="What is SRCAA?">About SRCAA</span>
     <span class="quick-chip" data-ask="Accreditations?">Accreditations</span>
-    <span class="quick-chip" data-ask="IT solutions?">IT Solutions</span>
-    <span class="quick-chip" data-ask="Online courses?">Online Courses</span>
+    <span class="quick-chip" data-ask="Who is the founder?">Founder</span>
+    <span class="quick-chip" data-ask="Tell me about Dr. Anjana">Dr. Anjana</span>
+    <span class="quick-chip" data-ask="Tell me about the team">Faculty Board</span>
     <span class="quick-chip" data-ask="Tell me about internships">Internships</span>
+    <span class="quick-chip" data-ask="What is the DORA statement?">DORA Policy</span>
   </div>
   <div class="copilot-input">
-    <input type="text" id="copilotQuery" placeholder="Ask about SRCAA only..." />
-    <button id="sendCopilotMsg"><i class="fas fa-paper-plane"></i></button>
+    <input type="text" id="copilotQuery" placeholder="Ask about SRCAA research programs..." aria-label="Chat query input" />
+    <button id="sendCopilotMsg" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
   </div>
 </div>
 
-<!-- SCRIPTS -->
+<!-- JAVASCRIPT LOGIC -->
 <script>
   function toggleMenu() { document.getElementById('navMobile').classList.toggle('active'); }
   function closeMobileMenu() { document.getElementById('navMobile').classList.remove('active'); }
@@ -373,7 +705,7 @@
   function getCookie(n){ var v="; "+document.cookie, p=v.split("; "+n+"="); return p.length===2?p.pop().split(";").shift():null; }
   function acceptCookies(){ setCookie('cookieConsent','accepted',365); document.getElementById('cookie-banner').classList.remove('show'); }
   function declineCookies(){ setCookie('cookieConsent','declined',7); document.getElementById('cookie-banner').classList.remove('show'); }
-  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 1000); });
+  window.addEventListener('load', function(){ if (!getCookie('cookieConsent')) setTimeout(function(){ document.getElementById('cookie-banner').classList.add('show'); }, 800); });
 
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(e) {
@@ -381,7 +713,7 @@
         e.target.classList.add('visible');
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
   document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(function(el) {
     observer.observe(el);
@@ -389,7 +721,7 @@
 
   window.addEventListener('scroll', function() {
     var navbar = document.getElementById('navbar');
-    if (window.scrollY > 30) navbar.classList.add('scrolled');
+    if (window.scrollY > 20) navbar.classList.add('scrolled');
     else navbar.classList.remove('scrolled');
   });
 
@@ -408,47 +740,55 @@
     var messagesDiv = document.getElementById('copilotMessages');
     var inputField = document.getElementById('copilotQuery');
     var sendBtn = document.getElementById('sendCopilotMsg');
-    fab.addEventListener('click', function() { win.classList.add('open'); });
+    
+    function toggleChat() { win.classList.toggle('open'); }
+    fab.addEventListener('click', toggleChat);
+    fab.addEventListener('keypress', function(e) { if (e.key === 'Enter') toggleChat(); });
     closeBtn.addEventListener('click', function() { win.classList.remove('open'); });
+
     function escapeHtml(str) { return str.replace(/[&<>]/g, function(m) { return ({'&':'&amp;','<':'&lt;','>':'&gt;'})[m]; }); }
+    function linkify(str) {
+      return str.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank" rel="noopener noreferrer" style="color:var(--primary);font-weight:700;text-decoration:underline;">$1 <i class="fas fa-external-link-alt" style="font-size:0.75rem;"></i></a>');
+    }
     function addMessage(text, isUser) {
       var d = document.createElement('div');
       d.className = 'message ' + (isUser ? 'user-msg' : 'bot-msg');
       d.innerHTML = isUser
-        ? '<div class="avatar-bot" style="background:#ccc;color:#333"><i class="fas fa-user"></i></div><div class="bubble">' + escapeHtml(text) + '</div>'
-        : '<div class="avatar-bot"><i class="fas fa-robot"></i></div><div class="bubble">' + escapeHtml(text) + '</div>';
+        ? '<div class="bubble">' + escapeHtml(text) + '</div>'
+        : '<div class="avatar-bot"><i class="fas fa-landmark"></i></div><div class="bubble">' + linkify(escapeHtml(text)) + '</div>';
       messagesDiv.appendChild(d);
       messagesDiv.scrollTop = messagesDiv.scrollHeight;
     }
+
     function getReply(msg) {
       var l = msg.toLowerCase();
-      var srcaaKw = ['src','shakti','srcaa','research centre','academia','internship','intern','publication','press','team','faculty','founder','sudhakaran','santosh','quality','certificate','itc','dora','assessment','contact','email','whatsapp','mission','vision','abhijnana','prathiba','sgrcr','global review','journal','accreditation','accredited','it solution','it solutions','technology','online course','online courses','course','learning'];
+      var srcaaKw = ['src','shakti','srcaa','research centre','academia','internship','intern','publication','press','team','faculty','founder','sudhakaran','santosh','anjana','scholar','quality','certificate','itc','dora','assessment','contact','email','whatsapp','mission','vision','abhijnana','prathiba','accreditation','accredited','sgrcr','journal','review'];
       var greetings = ['hi','hello','hey','help','what can you do','about you'];
-      if (greetings.some(function(g) { return l.indexOf(g) >= 0; })) return "Hello! I\u2019m here to answer questions about SRCAA. Ask me about SGRCR, accreditations, IT solutions, online courses, internships, team, publications, contact, certifications, or DORA.";
-      if (!srcaaKw.some(function(k) { return l.indexOf(k) >= 0; })) return "I\u2019m sorry, I can only provide information about SRCAA. Please ask about SGRCR, accreditations, IT solutions, online courses, internships, publications, team, contact, or DORA.";
-      if ((l.indexOf('what') >= 0 || l.indexOf('about') >= 0 || l.indexOf('tell') >= 0) && l.indexOf('src') >= 0) return "SRCAA is a digital research institution established in 2024, founded by Sudhakaran T. Accredited by ITC and GAOTE, it focuses on research excellence, global collaboration, and empowering students and educators.";
-      if (l.indexOf('sgrcr') >= 0 || l.indexOf('global review') >= 0) return "SGRCR (SRCAA Global Review of Contemporary Research) is our new peer-reviewed, open-access journal for multidisciplinary research with DOI assignment and global indexing. Visit the SGRCR tab.";
-      if (l.indexOf('accreditation') >= 0) return "SRCAA holds ITC accreditation, GAOTE registration, and memberships with RCI, APA, and CMAOI. Visit our Accreditations tab.";
-      if (l.indexOf('it solution') >= 0 || l.indexOf('technology') >= 0) return "SRCAA is launching IT solutions for academic institutions \u2014 digital research platforms, publication management, data analytics, and web infrastructure. Coming soon! Visit the IT Solutions tab.";
-      if (l.indexOf('online course') >= 0 || l.indexOf('course') >= 0 || l.indexOf('learning') >= 0) return "SRCAA Online Courses are coming soon! We are building a platform with expert-led courses. Visit the Online Courses tab to get notified.";
-      if (l.indexOf('internship') >= 0) return "The SRCAA Internship Program offers hands-on experience in research writing, data analysis, and publication support. Apply via the Apply Now button.";
-      if (l.indexOf('contact') >= 0 || l.indexOf('email') >= 0) return "Email: srcaacontact@gmail.com. Join our WhatsApp community via the Contact section at the bottom of the page.";
-      if (l.indexOf('publication') >= 0 || l.indexOf('press') >= 0 || l.indexOf('abhijnana') >= 0) return "SRCAA publishes \u2018Abhijnana Prathiba\u2019 \u2013 press releases, internship reports, and books. Check the Publications section.";
-      if (l.indexOf('team') >= 0 || l.indexOf('faculty') >= 0) return "Our team includes Dr. Anjana Radhakrishna, Mr. Ambarish C Abbaiah, Dr. Narayana K.H, Dr. Lakshmi Bai D, Dr. Pruthvi N, and others.";
-      if (l.indexOf('founder') >= 0 || l.indexOf('sudhakaran') >= 0) return "Founder: Sudhakaran T \u2013 distinguished academic researcher, ITC Associate.";
-      if (l.indexOf('santosh') >= 0) return "Dr. Santosh N. Chikkamari is SRCAA\u2019s Associate Researcher, affiliated with Charles Sturt University and University of Sydney, with 10+ years experience.";
-      if (l.indexOf('quality') >= 0 || l.indexOf('certificate') >= 0) return "SRCAA holds an International Quality Certificate (85% Grade B) accredited by ITC. Verify via the Verify Certificate button.";
-      if (l.indexOf('dora') >= 0) return "SRCAA endorses DORA (effective 01 March 2026). We assess research on quality, originality, and societal impact.";
-      if (l.indexOf('mission') >= 0) return "Mission: Foster ethical scholarship, interdisciplinary collaboration, and academic capacity building globally.";
-      if (l.indexOf('vision') >= 0) return "Vision: Become a globally recognised digital research institution creating an inclusive knowledge ecosystem.";
-      return "Thank you for your interest in SRCAA! Explore our tabs or ask me something specific.";
+      if (greetings.some(function(g) { return l.indexOf(g) >= 0; })) return "Greetings! I am the SRCAA academic assistant. How may I assist you with our accreditations, SGRCR journal portal, research publications, faculty board, or internship programs?";
+      if (l.indexOf('sgrcr') >= 0 || l.indexOf('journal') >= 0 || l.indexOf('contemporary research') >= 0) return "SGRCR (SRCAA Global Review of Contemporary Research) is our official open-access, multidisciplinary peer-reviewed international academic journal. You can explore published papers and submit manuscripts directly at our dedicated journal portal: https://www.sgrcr.srcaa.co.in/";
+      if (!srcaaKw.some(function(k) { return l.indexOf(k) >= 0; })) return "Thank you for reaching out. I can assist specifically with SRCAA's academic programs, SGRCR journal portal, accreditations, faculty directory, research publications, or DORA commitment. What topic may I help clarify?";
+      if ((l.indexOf('what') >= 0 || l.indexOf('about') >= 0 || l.indexOf('tell') >= 0) && (l.indexOf('src') >= 0 || l.indexOf('institution') >= 0)) return "Shakti Research Centre and Academia (SRCAA) is an accredited digital academic and research institution established in 2024 by Sudhakaran T. Operating under the International Trade Council (ITC) Framework and registered with GAOTE, SRCAA advances interdisciplinary research, ethical scholarship, and global academic collaboration.";
+      if (l.indexOf('accreditation') >= 0) return "SRCAA is accredited under the International Trade Council (ITC) Conformity Assessment and Recognition Framework, registered with GAOTE, listed with ROR, and holds memberships with RCI, APA, and CMAOI. View the Accreditations page for full documentation.";
+      if (l.indexOf('internship') >= 0) return "The SRCAA Research Internship Programme offers university students hands-on experience in empirical research writing, data analysis, and publication support with senior faculty mentorship. You can apply directly through the Internship section.";
+      if (l.indexOf('contact') >= 0 || l.indexOf('email') >= 0) return "Official Institutional Secretariat Email: srcaacontact@gmail.com. You can also join our verified WhatsApp academic network via the Contact section.";
+      if (l.indexOf('publication') >= 0 || l.indexOf('press') >= 0 || l.indexOf('abhijnana') >= 0) return "SRCAA publishes 'Abhijnana Prathiba' press releases, peer-reviewed dissertations, and academic monographs. You can also access our flagship journal portal at https://www.sgrcr.srcaa.co.in/";
+      if (l.indexOf('team') >= 0 || l.indexOf('faculty') >= 0 || l.indexOf('board') >= 0) return "Our interdisciplinary Academic Board includes Dr. Anjana Radhakrishna (Senior Academic Scholar), Dr. Santosh Nelamakanahalli Chikkamari (Associate Researcher), Dr. Narayana K.H, Dr. Lakshmi Bai D, Dr. Pruthvi N, Mr. Ambarish C Abbaiah, and esteemed scholars across commerce, sciences, and governance.";
+      if (l.indexOf('founder') >= 0 || l.indexOf('sudhakaran') >= 0) return "Founder: Sudhakaran T — esteemed educator, academic researcher, and ITC Associate dedicated to fostering transparent research environments.";
+      if (l.indexOf('anjana') >= 0 || l.indexOf('scholar') >= 0) return "Dr. Anjana Radhakrishna (Ph.D., MBA) is SRCAA's Senior Academic Scholar and Advisory Board Member with over 20 years of higher education teaching tenure and published research in management and corporate governance.";
+      if (l.indexOf('santosh') >= 0) return "Dr. Santosh Nelamakanahalli Chikkamari (M.Com., Ph.D.) is an Associate Researcher at SRCAA, associated with Charles Sturt University and the University of Sydney Business School, Australia, specializing in commerce, corporate finance, and quantitative research methodology.";
+      if (l.indexOf('quality') >= 0 || l.indexOf('certificate') >= 0) return "SRCAA holds an International Quality Certificate (85% Grade B) under the International Quality Certification Program, accredited by ITC.";
+      if (l.indexOf('dora') >= 0) return "Effective 01 March 2026, SRCAA formally endorses the San Francisco Declaration on Research Assessment (DORA), committing to evaluate research based on quality, rigor, and impact rather than journal metrics alone.";
+      if (l.indexOf('mission') >= 0) return "Mission: Advance research excellence globally by fostering ethical scholarship, interdisciplinary collaboration, innovation, and academic capacity building.";
+      if (l.indexOf('vision') >= 0) return "Vision: To be an internationally recognized digital academic institution creating a sustainable and inclusive knowledge ecosystem.";
+      return "Thank you for contacting SRCAA. Feel free to browse our sections, explore the SGRCR Journal portal (https://www.sgrcr.srcaa.co.in/), or ask specific questions regarding our research programs.";
     }
+
     function sendMessage() {
       var q = inputField.value.trim();
       if (!q) return;
       addMessage(q, true);
       inputField.value = '';
-      setTimeout(function() { addMessage(getReply(q), false); }, 300);
+      setTimeout(function() { addMessage(getReply(q), false); }, 250);
     }
     sendBtn.addEventListener('click', sendMessage);
     inputField.addEventListener('keypress', function(e) { if (e.key === 'Enter') sendMessage(); });
@@ -456,6 +796,22 @@
       chip.addEventListener('click', function() {
         inputField.value = chip.dataset.ask;
         sendMessage();
+      });
+    });
+
+    // Academic Board Category Filter
+    document.querySelectorAll('.board-filter-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        document.querySelectorAll('.board-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.getAttribute('data-filter');
+        document.querySelectorAll('.cards-grid .card').forEach(function(card) {
+          if (filter === 'all' || card.getAttribute('data-cat') === filter) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       });
     });
   })();

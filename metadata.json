@@ -1,0 +1,6 @@
+{
+  "name": "SRCAA — Shakti Research Centre & Academia",
+  "description": "Digital academic and research institution advancing research excellence, scholarly engagement, and international academic partnerships.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
